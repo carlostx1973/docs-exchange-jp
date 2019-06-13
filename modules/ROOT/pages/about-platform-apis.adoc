@@ -1,0 +1,21 @@
+= Exchange プラットフォーム API
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange には、Maven Facade を使用してアセットの
+パブリッシュとコンシュームを行い、Graph API を使用して
+アセットを検索するための API 機能があります。
+
+Maven Facade では、統合アセットをパブリッシュすることもできます。
+
+トピック:
+
+* xref:to-publish-assets-maven.adoc[Maven を使用した Exchange アセットのパブリッシュとデプロイ]
+* xref:to-search-with-graph-api.adoc[Graph API を使用した検索]
+
+== 関連情報
+
+* xref:about-api-use.adoc[API のコンシューム]
+* xref:to-configure-api-settings.adoc[API インスタンスの設定]

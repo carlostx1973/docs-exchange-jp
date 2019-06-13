@@ -1,0 +1,31 @@
+= API インスタンスの設定
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange では、非公開 Exchange または Exchange ポータルで REST、SOAP、および HTTP API サービスが公開か非公開かを設定できます。表示を設定する一般的なサービスは、API Manager を使用して設定する API に関連付けられたプロキシまたはポリシーです。
+
+API Manager で Exchange から API を登録すると、その API のインスタンスが左のナビゲーションバーの [API Instances (API インスタンス)] リストに表示されます。
+
+API が Anypoint Platform 外の別の API 管理プログラムによって管理されている場合、API インスタンスを作成することもできます。
+
+アクセスは Exchange の種別によって異なります。
+
+* 非公開 Exchange では、HTTP、REST、および SOAP API の API インスタンスが表示される。アセット管理者の場合、API インスタンスの表示を変更したり新規インスタンスを追加したりできます。
++
+** インスタンスを公開する場合、[Visibility (表示)] インジケータを変更します。
+** 鉛筆アイコンをクリックしてインスタンスを編集するか、X アイコンをクリックしてインスタンスを削除できます。
++
+* Exchange ポータル では、SOAP および HTTP API の API インスタンスが表示される。Exchange ポータルのすべてのインスタンスは参照のみです。
+
+*注意:*
+
+* 各インスタンスの表示は非公開か公開のいずれか。
+** 公開は、ビジネスグループの Exchange ポータル内のすべてのユーザに適用されます。
+** 非公開は、アセットの共有または Anypoint Platform ロールによってアセットを参照可能なユーザのみを対象としています。
+* リストされている場合、REST API のモッキングサービスが使用可能であることが示される。モッキングサービスは、API 機能のテストに使用できるデータを提供します。モッキングサービスは常に公開です。
+
+== 関連情報
+
+* xref:design-center::design-mocking-service.adoc[API へのコールのシミュレーション]

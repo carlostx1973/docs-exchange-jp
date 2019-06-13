@@ -1,0 +1,125 @@
+= 公開ポータルのバニティドメイン
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+このドキュメントには、バニティドメインを使用して組織の公開ポータルをセットアップする手順と必要な NGINX 設定が含まれています。
+
+== ドメインをホワイトリストに登録する
+
+公開ポータルを適切に機能させるには、Exchange でドメインをホワイトリストに登録する必要があります。手順は、次のとおりです。
+
+. マスタ組織で組織の管理者ロールを持つ Anypoint Platform ユーザアカウントからアクセストークンを取得します。
++
+[source,console]
+----
+ACCESS_TOKEN=$(curl https://anypoint.mulesoft.com/accounts/login -XPOST -d "username=YOUR_USERNAME&password=YOUR_PASSWORD" | jq -r ".access_token")
+----
++
+. アクセストークンを使用して、カスタムドメインをホワイトリストに登録します。
++
+[source,console]
+----
+curl https://anypoint.mulesoft.com/exchange/api/v1/organizations/YOUR_ORGANIZATION_DOMAIN/portal/domain -XPUT -d "your.custom.domain" -H "content-type: text/plain" -H "authorization: bearer $ACCESS_TOKEN"
+----
++
+IMPORTANT: この手順に従わないと、ポータルにログインできなかったり、認証が必要なアクションを実行できなくなったりします。
+
+== リバースプロキシをセットアップする
+
+リバースプロキシを使用すると、ユーザ は MuleSoft サイトと同様にバニティドメインサイトにアクセスして操作できます。たとえば、`+https://anypoint.mulesoft.com/exchange/portals/robo-cop/+` とまったく同じように `+https://developers.robocop.com/path/of/justice/+` にアクセスして操作できます。
+
+これは、特定のドメインへの要求を Anypoint Platform に再転送する https://en.wikipedia.org/wiki/Reverse_proxy[リバースプロキシ]を使用して達成できます。次のセクションでは、リバースプロキシを適切に実装するために必要な最小限の NGINX 設定ルールの例を示します。
+
+Apache、コンテンツ配信ネットワーク (CDN) など、NGINX 以外のサーバでリバースプロキシをセットアップできます。現在の Web サーバの実装に必要な特定の設定は多少異なる可能性がありますが、ルールは同じ方法で実装する必要があります。
+
+=== 一般的な設定
+
+ポータルのバニティドメイン設定用の基本リバースプロキシをセットアップするには、ルートマッピングとカスタムヘッダーをセットアップします。
+
+==== ルートマッピング
+
+`shared`、`icons`、`exchange/api-console`、および `node_modules` の静的リソースルートマッピングをセットアップします。ポータルパスに関係なく、これらのルートはルートレベルにある必要があります。
+
+例:
+
+* `+https://developers.robocop.com/shared+` から `+https://anypoint.mulesoft.com/shared+` へのルート。
+* `+https://developers.robocop.com/icons+` から `+https://anypoint.mulesoft.com/icons+` へのルート。
+* `+https://developers.robocop.com/node_modules+` から `+https://anypoint.mulesoft.com/node_modules+` へのルート。
+* `+https://developers.robocop.com/exchange/api-console+` から `+https://anypoint.mulesoft.com/exchange/api-console+` へのルート。
+
+`callback` から `+https://anypoint.mulesoft.com/exchange/portals/+**{YOUR_ORGANIZATION_DOMAIN}**/callback` へのルート。
+
+例:
+
+* `+https://developers.robocop.com/callback+` から `+https://anypoint.mulesoft.com/exchange/portals/robo-cop/callback+` へのルート。
+
+すべてのポータルトラフィックを Anypoint Platform に転送します。これは、ポータルパスによって異なります。ポータルパスは任意のパスにすることができます。この例のポータルパスは `path/of/justice/` です。
+
+例:
+
+* `+https://developers.robocop.com/path/of/justice/+` *_(およびこのパスの下位のすべてのルート)_* から `/https://anypoint.mulesoft.com/exchange/portals/robo-cop/` へのルート。
+
+==== カスタムヘッダー
+
+上記の各ルートにヘッダーを追加します。
+
+[source,console,linenums]
+----
+'X-Forwarded-Path': Base path of your vanity domain public portal URL. This can be any path. It can be just '/' for the root path. It does not need to match the base path for the portal in the anypoint.mulesoft.com domain. This path must end with a slash ("/"). Example: 'path/of/justice/'
+'X-Forwarded-Host': Your public portal vanity domain. Example: 'developers.robocop.com'
+----
+
+=== NGINX の使用
+
+[source,console,linenums]
+----
+location ~ /(shared|node_modules|icons|exchange/api-console) {
+    proxy_set_header X-Forwarded-Host $http_host;
+    proxy_set_header X-Forwarded-Path ${PUBLIC_PORTAL_PATH};
+
+    proxy_pass ${ANYPOINT_BASE_URL};
+}
+
+location /callback {
+    proxy_set_header X-Forwarded-Host $http_host;
+    proxy_set_header X-Forwarded-Path ${PUBLIC_PORTAL_PATH};
+
+    proxy_pass ${ANYPOINT_BASE_URL}/exchange/portals/${ORGANIZATION_DOMAIN}/callback;
+}
+
+location ${PUBLIC_PORTAL_PATH} {
+    proxy_set_header X-Forwarded-Host $http_host;
+    proxy_set_header X-Forwarded-Path ${PUBLIC_PORTAL_PATH};
+
+    proxy_pass ${ANYPOINT_BASE_URL}/exchange/portals/${ORGANIZATION_DOMAIN}/;
+}
+----
+
+次のようにセットアップします。
+
+[source,console,linenums]
+----
+${PUBLIC_PORTAL_PATH}: Your custom path. Must end with a forward slash "/".
+${ANYPOINT_BASE_URL}: Anypoint Platform URL for the desired region.
+${ORGANIZATION_DOMAIN}: Your organization's domain in Anypoint Platform.
+----
+
+たとえば、Anypoint Platform ドメインが `robo-cop` の `Robocop` 組織公開ポータルを `+developers.robocop.com/path/of/justice/+` で実行するとします
+
+[source,console,linenums]
+----
+${PUBLIC_PORTAL_PATH}: /path/of/justice/
+${ANYPOINT_BASE_URL}: https://anypoint.mulesoft.com
+${ORGANIZATION_DOMAIN}: robo-cop
+----
+
+注意: サーバは `https` を使用して実行する必要があります。
+
+適切にセットアップすれば、`+https://anypoint.mulesoft.com/exchange/portals/robo-cop/+` とまったく同じように `+https://developers.robocop.com/path/of/justice/+` にアクセスして操作できます。
+
+== 関連情報
+
+* https://forums.mulesoft.com[MuleSoft フォーラム]
+* https://support.mulesoft.com/s/knowledge[知識ベース記事]

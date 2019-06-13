@@ -1,0 +1,17 @@
+= API のコンシューム
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange は、API を簡単にパブリッシュして組織内外の開発者と共有できる重要な機能を API プロバイダに提供します。
+
+Exchange は、API コンシューマが次を使用して API 機能を理解し、機能をテストするために役立ちます。
+
+* API 関数を表示する API Console。このコンソールは、REST API 詳細画面の右に表示されます。
+* API ドキュメントを表示し、API 機能をテストするための API Notebook。
+* モッキングサービスを使用した API に対するデータのシミュレーション。
+
+== 関連情報
+
+* xref:to-describe-an-asset.adoc[アセットの説明] - Exchange で直接 REST API 機能を表示して試す方法を説明します。

@@ -1,0 +1,234 @@
+= アセット情報の検索
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Exchange はアセットを見つけるのに役立ちます。アセットを検索したり、[All Types (すべてのタイプ)] をクリックして特定のアセット
+を絞り込んだり、[All Types (すべてのタイプ)] 検索条件で検索テキストを組み合わせたりすることができます。
+
+<<index.adoc#content-types,[Content Type (コンテンツタイプ)]>> には、さまざまなタイプのアセットがリストされます。
+
+== アセットの詳細
+
+アセットをクリックすると、詳細情報が表示されます。
+
+* 左側のナビゲーション領域 - 追加ページ、保存された検索語、アプリケーション名、インスタンス、
+および REST API の場合は REST 仕様の HTTP 関数がリストされます。
+* 右側の詳細パネル - アセットの作成日と作成組織、アセットの最終パブリッシュ日、バージョン、アセットの連動関係がリストされます。REST API の場合、右側のパネルでは、サンプルコールの作成、テストデータ (モッキング)、およびデータを API に送信して結果を表示する機能により、API をテストできます。
+
+== Exchange の検索
+
+検索を使用して、アセットタイトル、アセット ID、またはアセットのタグ内に 1 つ以上の用語が含まれる Exchange アセットを見つけることができます。[All Types (すべてのタイプ)] にリストされる検索条件を使用して、検索語を組み合わせることもできます。
+検索は表示している Exchange にのみ適用されます。
+非公開 Exchange で検索した場合、検索には非公開 Exchange アセットのみが
+リストされ、公開 Exchange アセットはリストされません。
+
+[Category (カテゴリ)] または [Tag (タグ)] 要素をクリックして検索することもできます。これにより、類似するアセットを見つけるために使用できる絞り込まれた検索が作成されます。
+
+== 検索を保存する
+
+. 検索語を入力して [Save This Search (この検索を保存)] をクリックします。
+. 検索に名前を付けて検索が組織用か個人用かを選択するように促されます。管理者は、現在のビジネスグループの全員に表示される検索を保存できます。個人用の検索は、その作成者にのみ表示されます。
+. 左側のナビゲーションバーで、保存された検索を確認します。ビジネスグループに固有の検索語がリストされます。それらの用語の下に、作成した検索が保存されます。
++
+image::ex2-saved-searches-groups.png[保存した検索グループ]
+
+== ビジネスグループ別のアセットの表示
+
+ビジネスグループでは、組織内の個人をグループ化できます。システム管理者がユーザを割り当ててビジネスグループに所属させます。各ビジネスグループに個別の Exchange アセットを使用できます。ビジネスグループを表示するには、
+Anypoint Platform にログインする必要があります。タスクバーからグループ名をクリックします。
+
+image::ex2-biz-groups.png[スクリーンショット - 上部のタスクバードロップダウンメニューにあるビジネスグループ]
+
+追加グループが表示されない場合は、Exchange 管理者にお問い合わせください。 
+
+グループにアセットが見つからない場合は、別のビジネスグループに属している可能性があります。別のビジネスグループのアセットを検索するには、*[All assets (すべてのアセット)]* をクリックします。左側のナビゲーション領域には、検索用の追加領域があります。[Provided by MuleSoft (MuleSoft による提供)] スコープには、MuleSoft によって提供されたアセットがリストされます。[All assets (すべてのアセット)] スコープには、MuleSoft および独自のマスタ組織によって提供されたアセットがリストされます。[Business group (ビジネスグループ)] スコープには、ビジネスグループ内のユーザによって作成されたアセットがリストされます。
+
+== アセットの REST API 要素を表示する
+
+. 左側のナビゲーション領域で、リソースや各リソースのメソッドなどの RAML または OAS API 仕様情報を参照できます。メソッドボタンをクリックすると、API に関する情報が表示されます。
++
+image::ex2-rest-ftns.png[スクリーンショット - 左側のナビゲーションバーの REST API 関数ボタン]
++
+. メソッドビューの右側を使用して、API をテストします。この機能は、カスタム HTTP ヘッダーを指定し、API のエンドポイントを使用して各 API のメソッドをテストできる Postman などのプログラムの動作と似ています。
+. [Request Access (アクセス権の要求)] をクリックし、表示している API をいずれかのアプリケーションに結び付けることで、API を使用してアプリケーションがコンシューム可能なデータを送受信できます。
+
+== API Notebook で API をテストする
+
+. API で使用可能な場合、コンテンツページで [API Notebook] をクリックします。
+. 使用方法に関する説明を読んだら、コードブロック内のサンプルを使用してテストし、さまざまなパラメータと値を試し、その結果をリアルタイムで確認できます。
+. [Play (再生)] をクリックし、コードサンプルのメソッドをテストして結果を表示します。
+
+== 語句の検索
+
+単語の間にスペースを挿入し、指定した各単語で始まる
+大文字と小文字を区別しないテキストを検索できます。
+これは、各単語の後に `*` ワイルドカード正規表現を追加する場合と似ています。
+たとえば、`mq module` を検索すると、`mq` または `module` で始まるテキストが含まれる
+アセットが検索されます。
+
+検索に一致するには、複数語の語句内の各単語がアセット名、アセットID、または
+タグ内に存在する必要があります。
+
+検索語をスペース以外の文字で区切ると、検索前に Exchange によってその文字が
+スペースに変換されます。
+
+=== 区切り文字の検索
+
+検索を使用して、アセット名、アセット ID、またはタグ内に 1 つ以上の用語が含まれる Exchange アセットを見つけることができます。
+
+英数字以外の記号で連結された検索語を入力すると、その用語の検索前に Exchange によって記号がスペースに置き換えられます。検索文字列は、両方の単語が結果に含まれている場合にのみ一致します。これは、`word1 AND word2` のリレーションと同じです。
+
+Exchange は、アセット名、アセット ID 値、およびタグ値を検索します。Exchange 1 から移行されたアセットは、検索にアセットの説明内のテキストを含めることもできます。
+
+検索語の例:
+
+[source,text,linenums]
+----
+sales:connect
+Sales-Connect
+connect:/sales
+-connect -sales
+----
+
+次の表に、アセットのアセット名、アセット ID、およびタグの値に応じて各検索語がどのように
+解釈されるかを示します。検索語が値に正しくマップされている場合に一致します。それ以外の場合、
+その理由が示されています。
+
+[%header%autowidth.spread]
+|===
+|アセット名 |アセット ID |タグ |一致?
+|Salesforce API |salesforce-api |mule-Connector |はい。
+|Salesforce Connector |salesforce-connector |REST |はい。
+|Validations API |validations-api |salesforce-connecting |はい。
+|Optimized API |optimized-api |resource:/connect, salesforce:enabled |はい。
+|Cisco Sales API  |cisco-sales-api |Connecting, Productive |はい。
+|Cisco Connector |cisco-connector |com.cisco.connector.sales
+|はい。タグが個別の用語に分割されているため。
+|Salesforce API |salesforce-api |muleconnector, MuleConnector |いいえ。`connect` が見つかりませんでした。
+|Salesforce Connec |salesforce-connec |REST |いいえ。`connect` が見つかりませんでした。
+|Validations API |validations-api |コネクタ |いいえ。`sales` が見つかりませんでした。
+|Cisco Presales API |cisco-presales-api |Connector, api |いいえ。`sales` が見つかりませんでした。
+|===
+
+=== 語句検索の区切り文字
+
+Exchange の検索には語句検索機能があり、これを使用すると、引用符で囲まれた用語のグループをクエリできます。語句検索は、引用符内のすべての完全一致用語が順序どおりに表示される場合にのみアセットと一致します。
+
+Exchange で次の検索を入力した場合、アセットの検索前に Exchange によって英数字以外の記号がスペースに置き換えられます。
+
+検索語の例:
+
+[source,text,linenums]
+----
+Api: "Sales connect"
+Api "Sales-connect"
+Api "Sales:/connect"
+Api-"Sales/connect"
+"Sales connect":Api
+----
+
+次の表に、アセットのアセット名、アセット ID、およびタグの値に応じて各検索語がどのように
+解釈されるかを示します。検索語が値に正しくマップされている場合に一致します。それ以外の場合、
+その理由が示されています。
+
+[%header%autowidth.spread]
+|===
+|アセット名 |アセット ID |タグ |一致?
+|Salesforce API |salesforce-api |mule-Connector |いいえ。`sales connect` が見つかりませんでした。
+|Salesforce Connector |salesforce-connector |REST |いいえ。
+|Sales Connect Asset |validations-api |mule-connector |はい。
+|Sales Connect Images |validations-images |mule-connector |いいえ。`api` が見つかりませんでした。
+|Optimized API |optimized-api |resource:/connect, sales:enabled |いいえ。`sales connect` が見つかりませんでした。
+|Optimized API |optimized-api |resource:/sales, connect:enabled |いいえ。各用語は異なるタグ内にあるため、`sales connect` が見つかりませんでした。
+|Optimized API |optimized-api |sales:/connect |はい。
+|===
+
+== クエリ言語を使用した検索
+
+クエリ言語を使用して、タグ、カテゴリ、およびカスタム項目でアセットを検索できます。
+
+=== タグで検索
+
+`tag:"some value"` または `tag:value` 構造を使用してタグで検索できます。
+タグ内にスペースが含まれない場合、二重引用符は不要です。
+また、タグ検索では大文字と小文字が区別されません。
+
+次の表に、検索されたアセットと一致する例と一致しない例を示します。
+
+[%header%autowidth.spread]
+|===
+|検索 |タグ |一致?
+|tag:"some value" |some value |はい。
+|tag:"some value" |value |いいえ。
+|tag:"value" |value |はい。
+|tag:value |value |はい。
+|tag:VALUE |value |はい。
+|tag:VaLuE |value |はい。
+|tag:value |val |いいえ。
+|===
+
+=== カテゴリで検索
+
+`category:"some key" = "some value"` 構造を使用して、カテゴリで検索できます。
+カテゴリのキーまたは値にスペースが含まれない場合、二重引用符は不要です。
+キーにアスタリスク (`*`) 正規表現を含めて、カテゴリ名内の文字を検索できます。
+また、キーと値では大文字と小文字が区別されますが、小文字の値を検索した場合はいずれにしても一致します。
+
+次の表に、検索されたアセットと一致する例と一致しない例を示します。
+
+[%header%autowidth.spread]
+|===
+|検索 |カテゴリ |一致?
+|category:my-key = my-value |my-key:my-value |はい。
+|category:my-key = MY-VALUE |my-key:MY-VALUE |はい。
+|category:my-key = my-value |my-key:MY-VALUE |はい。
+|category:"my key" = "my value" |my key:my value |はい。
+|category:"key" = "value" |my key:my value |いいえ。
+|category:key = value |my-key:my-value |いいえ。
+|category:this.*= value |this.is.my.key:value |はい。
+|category:*my.key = value |this.is.my.key:value |はい。
+|category:this.*= value |this.is.my.key:some-value |いいえ。
+|category:this.* = some-* |this.is.my.key:some-value |いいえ。
+|===
+
+異なるカテゴリの組み合わせを検索できますが、同じカテゴリの複数の値は検索できません。複数の検索語には暗黙的な AND を使用します。OR はサポートされていません。
+
+次の検索語は、System API と Salesforce 製品の両方としてマークされたすべてのアセットを返します。
+
+`category:"API Type" = "System API" category:"Product" = "Salesforce"`
+
+=== カスタム項目で検索
+
+「カテゴリで検索」と似ていますが、クエリ言語で `category` の代わりに `field` を検索します。
+`field:"some key" = "some value"` 構造を使用して、カスタム項目で検索できます。
+カスタム項目のキーまたは値にスペースが含まれない場合、二重引用符は不要です。
+キーにアスタリスク (`*`) 正規表現を含めて、項目名内の文字を検索できます。
+また、キーと値では大文字と小文字が区別されますが、小文字の値を検索した場合はいずれにしても一致します。
+
+次の表に、検索されたアセットと一致する例と一致しない例を示します。
+
+[%header%autowidth.spread]
+|===
+|検索 |項目 |一致?
+|field:my-key = my-value |my-key:my-value |はい。
+|field:my-key = MY-VALUE |my-key:MY-VALUE |はい。
+|field:my-key = my-value |my-key:MY-VALUE |はい。
+|field:my-key = My-ValUe |my-key:MY-VALUE |いいえ。
+|field:MY-KEY = my-value |my-key:my-value |いいえ。
+|field:my-key = 10 |my-key:10 |はい。
+|field:"my key" = "my value" |my key:my value |はい。
+|field:"key" = "value" |my key:my value |いいえ。
+|field:key = value |my-key:my-value |いいえ。
+|field:this.*= value |this.is.my.key:value |はい。
+|field:*my.key = value |this.is.my.key:value |はい。
+|field:this.*= value |this.is.my.key:some-value |いいえ。
+|field:this.* = some-* |this.is.my.key:some-value |いいえ。
+|===
+
+== 関連情報
+
+* xref:about-my-applications.adoc[[My Applications (マイアプリケーション)] について]
+* xref:to-configure-api-settings.adoc[API インスタンスの設定]
+* xref:6@studio::exchange-integration.adoc[Anypoint Studio と Exchange のインテグレーション]

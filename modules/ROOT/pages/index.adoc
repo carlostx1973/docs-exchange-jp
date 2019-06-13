@@ -1,0 +1,61 @@
+= Anypoint Exchange
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange には、アセットとリソースを検索、共有し、アプリケーションに組み込むことができるという利点があります。Anypoint Exchange は、API 開発者ポータルの作成、API の表示とテスト、API へのデータのシミュレーション (モッキングサービス)、アセットの作成、および API Notebook を使用した API 機能の説明とテストに役立ちます。
+
+== はじめに
+
+. 公開 https://www.anypoint.mulesoft.com/exchange/[Exchange] から、アセットをクリックしてその説明を表示します。
+. [Login (ログイン)] をクリックして組織の非公開 Exchange を表示します。
+. ログインしたら、組織の [Public Portal (公開ポータル)] をクリックし、全員が使用可能な公開 API を表示します。
+
+Exchange にログインしたら、API、コネクタ、テンプレート、サンプル、API Notebook、カスタムアセット用のアセットを作成できます。
+
+== API を試す
+
+. [All Types (すべてのタイプ)] > [REST APIs] をクリックし、任意の API を選択します。
+. アセットをクリックすると、左のナビゲーション領域に API 関数が
+表示されます。Exchange では、API 内の関数を参照できます。
+. 関数をクリックすると詳細が表示されます。画面の右側でサンプル値を入力して API に送信し、API からの応答を取得することで、API をテストできます。
+
+== アセットの詳細情報を確認するには?
+
+左のナビゲーション領域にある [Helpful Link (参考リンク)] 項目をクリックすると、ドキュメントへのリンクが表示されます。
+
+== コンテンツについて
+
+Exchange のアセットは Anypoint Studio (コネクタ、テンプレート、サンプル)、API Manager、および Runtime Manager (API) でアクセス可能で、Design Center から Exchange に API をパブリッシュできます。
+
+MuleSoft がその公開コンテンツを認証し、パートナーコネクタのレビューと承認を行います。すべての非公開コンテンツは組織の内部にあり、組織の外部には表示されません。お客様は、独自の Exchange 内でパブリッシュする非公開コンテンツに対して責任を負います。
+
+[[content-types]]
+== コンテンツタイプ
+
+Exchange の公開コンテンツと非公開コンテンツは両方とも、次のタイプの要素で構成できます。
+
+* Connectors (コネクタ) - サードパーティの API と標準のインテグレーションプロトコルを使用して Anypoint Platform で開発およびデプロイされた、エンドポイントに対するパッケージ化された接続。アプリケーションのフロー内でコネクタを使用して、プロトコルまたは特定の API を介してデータを送受信します。Anypoint Studio には多数のコネクタが付属していますが、Exchange にはさらに多くのコネクタがあります。
+* Templates (テンプレート) - 一般的なユースケースに対応するベストプラクティスに基づいて構築されパッケージ化されたインテグレーションパターン。ユーザログイン情報などの情報を追加し、テンプレートのユースケースまたはソリューションを完成させることができます。また、必要に応じてテンプレートをカスタマイズまたは拡張できます。
+* Examples (サンプル) - Anypoint Studio で実行する準備が整っていてユースケースまたはソリューションを実証するアプリケーション。
+* REST APIs - API を指定する RAML ファイルまたは OAS ファイル。これらの API は、メタデータを AnypointStudio に公開するために HTTP 要求コネクタで参照できます。
+* SOAP APIs - API を指定する WSDL ファイル。
+* HTTP APIs - API Manager でエンドポイントを管理する非公開 Exchange ユーザが使用するためのエンドポイントのプレースホルダ。
+* API Spec Fragments (API 仕様フラグメント) - RAML フラグメントとも呼ばれる。バージョンと識別子があり、それ自体では完全な RAML 仕様ではない RAML ドキュメント。
+* Custom (カスタム) - カスタムアセットは、システムの側面を説明したり、手順動画を提供したり、商品または組織のドキュメントを説明したりするための説明とファイル (省略可能) を提供します。
+
+== バージョン
+
+このページは、現在のバージョンである Exchange 2 に適用されます。
+
+Exchange 1 のドキュメントは、xref:about-exchange1.adoc[「Exchange 1 (旧バージョン) について」]を参照してください。Exchange 1 ユーザは Exchange 2 にxref:migrate.adoc[移行]することをお勧めします。
+
+完全なバージョン履歴は、xref:release-notes::exchange/anypoint-exchange-release-notes.adoc[「Anypoint Exchange リリースノート」]を参照してください。
+
+== 関連情報
+
+* xref:release-notes::exchange/anypoint-exchange-release-notes.adoc[Anypoint Exchange リリースノート]
+* xref:migrate.adoc[Exchange 1 からのアセットの移行]
+* https://forums.mulesoft.com[MuleSoft フォーラム]
+* https://support.mulesoft.com[MuleSoft サポートへのお問い合わせ]

@@ -1,0 +1,24 @@
+= My Applications (マイアプリケーション)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+アセットの Exchange 詳細ビューの [My Applications (マイアプリケーション)] 領域
+には、API とユーザ間で契約中のアプリケーションがリストされます。
+
+image::ex2-my-applications.png[]
+
+契約では、API のクライアント ID とクライアントシークレットを使用してその契約に関する情報が保持されます。
+各アプリケーションには、説明、その URL、リダイレクト URI、許可種別、および使用状況ダッシュボードがリストされます。
+
+使用状況の情報により、検証期間を設定できます。指定しない場合、範囲は過去 8 日間になります。使用状況には、API への合計要求数、平均遅延時間、エラー率、および合計要求数、平均遅延時間、HTTP 状況コード別の要求数、エラー率のグラフが表示されます。
+
+ユーザがアプリケーションを追加するには、[Request Access (アクセス権の要求)]
+をクリックしてアプリケーションと API 間のリンクを確立します。そのアプリケーションはすでに存在するか、存在しない場合はユーザが [Request Access (アクセス権の要求)] メニューからアプリケーションを作成します。
+
+[My Applications (マイアプリケーション)] 内のアプリケーションは、Anypoint Platform の API Manager を使用して登録されます。
+
+== 関連情報
+
+* xref:to-request-access.adoc[アクセス権の要求]

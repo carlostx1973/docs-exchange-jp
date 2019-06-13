@@ -1,0 +1,36 @@
+= [Request Access (アクセス権の要求)] ボタンの表示の有効化
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+このトピックには Exchange 管理者ロールが必要です。
+
+ユーザは [Request Access (アクセス権の要求)] ボタン image:ex2-request-access.png[ボタン - アクセス権の要求]
+をクリックして、API にアクセスできるアプリケーションを指定します。
+
+Exchange 管理者の場合、[More Options (その他のオプション)] メニュー image::ex2-more-options-icon.png[] に [Request Access (アクセス権の要求)] ボタンが表示されます。
+
+ただし、API アセットを作成しただけでは [Request Access (アクセス権の要求)] ボタンは表示されません。
+最初にアセットを設定する必要があります。
+
+. API Manager で、[Manage API (API を管理)] > [Manage API from Exchange (Exchange から API を管理)] をクリックし、API を開きます。
+. API Manager の実装 URI として、Exchange の API アセットの URL を使用します。
+. API Manager で API を開いたら、API インスタンス ID 値や他の有益な情報を表示できます。
+. Exchange に戻るには、[View API in Exchange (Exchange で API を表示)] をクリックします。
+. Exchange で、[Request Access (アクセス権の要求)] ボタンが 3 つのドットのメニュー内に表示されます。
+
+注意: API Manager では、API の [Status (状況)] は [Unregistered (未登録)] としてマークされます。API を登録するには、API を Runtime Manager にデプロイします。ただし、API を Exchange で使用可能にするために API の [Status (状況)] を [Registered (登録済み)] に変更する必要はありません。
+
+== [Request Access (アクセス権の要求)] の表示条件
+
+公開ポータルで [Request Access (アクセス権の要求)] ボタンを表示するには、次が必要になります。
+
+* Exchange でパブリッシュされた REST、SOAP、または HTTP API。REST API は OAS または RAML API 仕様のいずれかです。
+* API Manager で API を使用して作成されたインスタンス。
+* [API Instances (API インスタンス)] リンクでインスタンスを公開として設定。
+* 存在しない場合、[API Instances (API インスタンス)] でインスタンスの URL を設定。
+
+== 関連情報
+
+* xref:to-request-access.adoc[アクセス権の要求]。

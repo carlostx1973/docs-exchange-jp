@@ -1,0 +1,27 @@
+= Exchange 公開ポータル
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Exchange では、組織が特定のロゴ、バナー画像、テキスト、およびブラウザタブ
+のお気に入りアイコンを使用して、組織内で Exchange のカスタマイズされた外部ビューを作成できます。
+
+Exchange 公開ポータルはインターネット上で全員が使用可能で、組織の API を
+外部の開発者に提供するために使用されます。Exchange ポータルは、以前は開発者ポータルと
+呼ばれていました。Exchange ポータルでは、ポータルの外観とコンテンツをカスタマイズできます。
+
+Exchange 公開ポータルにより、組織は REST、SOAP、および HTTP API を共有できます。
+
+Exchange 管理者は、次のセクションの説明に従って API アセットを公開ポータルで共有できます。
+
+== ポータルのアセットの説明を更新する
+
+. 組織の Exchange でアセットを見つけます。
+. アセットの説明を編集し、完了したらアセットをパブリッシュします。
+. ポータルに戻り、アセットをクリックします。アセットの説明を変更したら、説明は自動的に更新されます。
+
+== 関連情報
+
+* xref:to-customize-portal.adoc[Exchange 公開ポータルのカスタマイズ]
+* xref:portal-vanity-domain.adoc[公開ポータルのバニティドメイン]

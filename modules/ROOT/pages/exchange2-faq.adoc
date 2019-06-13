@@ -1,0 +1,82 @@
+= FAQ: Exchange 2
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+このトピックでは、よくある質問とその回答をまとめました。
+
+== レビューと承認のワークフローは?
+
+Exchange にはドラフト機能があります。組織はコントリビュータとパブリッシャ用の 2 つのロールを作成し、パブリッシュ
+待機中のページの URL をパブリッシャーロールのユーザと共有できます。ロールは [Anypoint Platform] > [Access Management (アクセス管理)]
+> [Roles (ロール)] で作成できます。ドラフト状態のコンテンツは、ドラフトがパブリッシュされるまで非表示になります。
+
+== 開発者ポータルの最新のバージョンの場所は?
+
+MuleSoft 開発者ポータルは https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/ にあります。
+
+== API Portal を作成する方法は?
+
+Anypoint Platform の組織のシステム管理者または Exchange 管理者が Exchange に初めてログインしたときに、
+公開ポータルが自動的に作成されます。ポータルへのリンクは左の
+ナビゲーションバーに表示されます。API アセットをポータルに追加したら、インターネットで
+表示されるようになります。ポータルにアセットを追加する方法については、<<whynoinpp,「アセットが公開ポータルに表示されない理由は?」>>を参照してください。
+
+ポータルの URL の形式は `+https://anypoint.mulesoft.com/exchange/portals/YOUR_LOGIN_NAME/+` です。
+
+[[whynoinpp]]
+== アセットが公開ポータルに表示されない理由は?
+
+[Share (共有)] ボタンをクリックして [Add to the Public Portal (公開ポータルに追加)] をクリックし、SOAP API、HTTP API、および OAS または RAML REST API アセットを公開ポータルに追加できます。アセットを公開ポータルと共有すると、そのアセットが公開され、公開ポータルの URL でインターネット上の全員に表示されます
+
+== 公開ポータルからアセットを削除する方法は?
+
+Exchange でアセットをクリックして [Share (共有)] をクリックします。[Add to the Public Portal (公開ポータルに追加)] をクリックします。[API version (API バージョン)]
+チェックボックス項目をクリックしてオフにします。[Share (共有)] をクリックしますExchange で
+ブラウザの画面を更新すると、アセットの [Overview (概要)] の [Visibility (表示)] 設定が
+[Private (非公開)] に変更されています。
+
+== アセットの名前を変更しても Exchange で古い名前が使用される理由は?
+
+アセットの名前を変更したら、キーボードの Return (または Enter) キーを押します。Return キーを
+押さないと、Exchange でのアセット名は変更前の名前に戻されます。
+
+== JSON スニペットを Exchange に追加し、別の JSON スキーマからそのスニペットを参照できますか?
+
+RAML データ型は使用できますが、別の JSON スキーマによって参照される JSON は使用できません。
+
+== Studio 6 を使用する Windows 7の Exchange アセットに CSS がない理由は?
+
+Exchange は、Windows の最新バージョンの Chrome、Firefox、および Internet Explorer 11 でのみ機能します。IE 9 はサポートされていないため、Exchange は正しく表示されません。
+
+== Maven を介して Exchange にカスタムコネクタを転送するときに、カスタムアイコンを定義する方法は?
+
+PUT を使用して、アイコン分類子と共に SVG アイコンを Exchange REST API にアップロードできます。Exchange ではそのアイコンの周囲に丸い境界線が追加されます。認証ヘッダーにベアラーとアクセストークンを渡す必要があります。
+
+たとえば、アイコンファイルを HTTP 本文に追加し、次のような PUT を使用します。
+
+----
+https://maven.anypoint.mulesoft.com/api/v1/organizations/:organizationId/maven/:groupId/:assetId/:version/:assetId-:version-icon.svg
+----
+
+== CI および CD パイプラインの一部として Exchange へのアセットの公開を統合できますか?
+
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用して、違いがある場合はそれを検出できるため、変更がない場合は Exchange に再パブリッシュしないようにします。
+
+== Exchange から RAML ファイルをダウンロードする API はありますか?
+
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-http/[Graph API (推奨)] または https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用できます。
+
+== API の所有者を変更する方法は?
+
+次の REST API コマンドを使用できます。
+
+[source,console,linenums]
+----
+curl -X POST \
+https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/<org-id>/apis/<api-id>/permissions \
+-H 'authorization: Bearer <OMMITED>' \
+-H 'content-type: application/json' \
+-d '{"userId":"<user-id>"}'
+----
