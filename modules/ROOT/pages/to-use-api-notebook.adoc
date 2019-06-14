@@ -1,0 +1,97 @@
+= API Notebook を使用したアセットのドキュメント化
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+API Notebook では、コードウィンドウに付随する説明を使用して API の機能をドキュメント化できます。ユーザはコードを
+変更し、各コードブロックの [Play (再生)] ボタンをクリックして実行できます。Exchange エディタから新しい API Notebook を
+作成し、コードブロックで JavaScript コードを使用できます。
+
+image::ex2-api-notebook.png[スクリーンショット - 対話型コードブロックの上にテキストが表示されている Exchange API Notebook]
+
+. RAML をドキュメント化する場合、Anypoint Platform の Design Center を使用して RAML を改善およびテストし、API を Anypoint Exchange にパブリッシュします。
++
+OAS 仕様をドキュメント化する場合、新しい Exchange アセットを作成して [API Spec - OAS (API 仕様 - OAS)] を選択します。注意: OAS 仕様は RAML に変換されるため、API Notebook の RAML 規則に従うことができます。
+. アセットをクリックして詳細を表示します。
+. [Edit (編集)] をクリックし、エディタで API Notebook アイコン image:ex2-api-notebook-icon.png[アイコン - エディタの API Notebook] をクリックします。
+. アセットの説明を追加します。
+. API Notebook アイコンにより、ビジュアルエディタで JavaScript コード項目を追加可能なパネルが作成されます。追加する関数の最初の文字を入力すると、その文字で始まる使用可能な関数がリストされます。
++
+マークダウンを使用している場合、各ノートエントリは次のように 3 つのチェックマークのブロックで囲まれます。
++
+[source,javascript,linenums]
+----
+```notebook
+// Authenticate client
+API.authenticate(myclient);
+```
+----
+
+== 外部 API の API Notebook プログラムフロー
+
+Instagram API などの外部 API にアクセスする場合、`+https://anypoint.mulesoft.com/exchange/api/v1/health+` URL の Anypoint アセットポータルサービスを
+使用して、クライアントを取得します。
+
+取得コードは次のようになります。
+
+[source,javascript]
+----
+fetch('https://anypoint.mulesoft.com/exchange/api/v1/health').then((res) => res.json())
+----
+
+ユーザが API で認証できるようにします。
+
+[source,text,linenums]
+----
+// Authenticate Instagram.
+// This asks you to authenticate with your personal account.
+// Don't worry, we have no idea who you are.
+API.authenticate(instagramApi);
+----
+
+これで、API を使用するノートを作成できます。
+
+== API Manager API の API Notebook プログラムフロー
+
+. API.createClient 関数を使用して、ノート内で API へのアクセスを初期化するクライアントを作成します。
++
+構文: `API.createClient('CLIENT_NAME', 'URL_TO_API_MANAGER_API');`
++
+. API.authenticate 関数を使用して、Anypoint Platform でクライアントを認証します。
++
+構文: `API.authenticate(CLIENT_NAME);`
++
+. REST API の機能に基づいてノートを作成します。各関数は、RAML 記述子ブロックの名前に
+基づきます。たとえば、`/info` というブロックがある `getdetails` クライアントの場合、GET コールをドキュメント化するには、ノートでの関数の説明を `getdetails.info.get();` とします。
++
+次のように、配列を使用して関数コールにパラメータを追加できます。
++
+`me.function.post[{ orgId: 'myorg'}) ...]`
++
+. コードブロックに要素を設定して [Play (再生)] をクリックし、Exchange で API をテストします。コードでエラーが
+発生することなく、すべてのコードブロックが機能することを確認します。
+
+[NOTE]
+====
+作成コールと認証コールは個別のノートコール内で指定する必要があります。
+
+[source,javascript,linenums]
+----
+```notebook
+fetch(’https://anypoint.mulesoft.com/exchange/api/v1/health').then((res) => res.json())
+API.createClient(‘github’, ‘https://anypoint.mulesoft.com/apiplatform/repository/v2/organizations/ORG_ID/public/apis/7782/versions/7918/files/root’);
+
+```
+
+```notebook
+
+API.authenticate(github);
+``` (edited)
+----
+====
+
+== 関連情報
+
+* API Notebook の関数の説明については、xref:1.x@api-manager::creating-an-api-notebook.adoc[「API Notebook リファレンス」]を参照。
+* https://docs.mulesoft.com/design-center/v/1.0/upload-raml-task[既存の RAML ファイルを Exchange にアップロード]。

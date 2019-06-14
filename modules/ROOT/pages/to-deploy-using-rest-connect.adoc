@@ -1,0 +1,327 @@
+= REST Connect コネクタジェネレータ
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Exchange バックエンドは REST Connect を使用して、REST API 仕様を Mule 3 および Mule 4 コネクタに透過的に変換します。Anypoint Studio でこのコネクタを他のコネクタと同様に使用できます。
+
+Anypoint Exchangeの [Download (ダウンロード)] ボタンを使用して、Mule 3 または Mule 4 コネクタをダウンロードできます。 
+
+REST Connect は現在、カスタム TLS 設定をサポートしていません。
+
+== 生成されたコネクタへのアクセス
+
+Exchange で、[Download (ダウンロード)] メニューから Mule 3 または Mule 4 コネクタをダウンロードできます。
+
+image::ex-downloads.png[]
+
+注意: Exchange に REST アセットをデプロイしたら、画面を更新してすべてのダウンロードオプションが使用可能であることを確認してください。
+
+Mule 3 コネクタは zip ファイルとしてダウンロードされ、Mule 4 コネクタは JAR ファイルとしてダウンロードされます。 
+
+== REST Connect のセキュリティスキームサポート
+
+REST Connect では、次のセキュリティスキームがサポートされています。
+
+* 基本認証
+* OAuth 2.0 クライアントログイン情報
+* OAuth 2.0 認証コード
+* パススルー
+* ダイジェスト認証
+
+その他の認証種別を使用して API 仕様をパブリッシュすると、アラートメールを受け取る可能性があります。自動生成されたコネクタを使用するには、これらのサポートされているセキュリティスキームのいずれかを使用するように API 仕様を更新します。
+
+基本認証の例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+title: Dropbox API
+version: 1
+baseUri: https://api.dropbox.com/{version}
+securitySchemes:
+  basic:
+    description: |
+      This API supports Basic Authentication.
+    type: Basic Authentication
+----
+
+OAuth 2.0 クライアントログイン情報の例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+version: v1
+title: Deadlines API
+baseUri: http://localhost/deadlines
+securitySchemes:
+    oauth_2_0:
+        description: Deadlines API supports OAuth 2.0 for authenticating all API requests.
+        type: OAuth 2.0
+        describedBy:
+            headers:
+                Authorization:
+                    description: Sends a valid OAuth 2 access token.
+                    type: string
+            responses:
+                401:
+                    description: Bad or expired token.
+                403:
+                    description: Bad OAuth request.
+        settings:
+            accessTokenUri: https://api.example.com/1/oauth2/token
+            authorizationGrants: [ client_credentials ]
+
+/deadlines:
+    get:
+        securedBy: [oauth_2_0]
+        displayName: Get deadlines.
+        description: Get a list of all registered deadlines.
+        responses:
+            200:
+                body:
+                    application/json:
+                        example: '[ { "rest-connect": "2017-03-13" } ]'
+----
+
+OAuth 2.0 認証コードの例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+version: v1
+title: Github API
+baseUri: https://api.github.com
+
+securitySchemes:
+  oauth_2_0:
+    description: |
+      OAuth2 is a protocol that lets external apps request authorization to private details
+      in a user's GitHub account without getting their password. This is preferred over
+      Basic Authentication because tokens can be limited to specific types of data,
+      and can be revoked by users at any time.
+    type: OAuth 2.0
+    describedBy:
+      headers:
+        Authorization:
+          description: |
+            Used to send a valid OAuth 2 access token.
+
+      responses:
+        404:
+          description: Unauthorized
+    settings:
+      authorizationUri: https://github.com/login/oauth/authorize
+      accessTokenUri: https://github.com/login/oauth/access_token
+      authorizationGrants: [ authorization_code ]
+      scopes:
+        - "user"
+        - "user:email"
+        - "user:follow"
+        - "public_repo"
+        - "repo"
+        - "repo_deployment"
+        - "repo:status"
+        - "delete_repo"
+        - "notifications"
+        - "gist"
+        - "read:repo_hook"
+        - "write:repo_hook"
+        - "admin:repo_hook"
+        - "admin:org_hook"
+        - "read:org"
+        - "write:org"
+        - "admin:org"
+        - "read:public_key"
+        - "write:public_key"
+        - "admin:public_key"
+----
+
+パススルーの例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+title: Customer API
+version: 1
+baseUri: https://api.customer.com/v2
+securitySchemes:
+  passthrough:
+    description: |
+      This API supports Pass Through Authentication.
+    type: Pass Through
+    describedBy:
+      headers:
+        api_key:
+          type: string
+----
+
+== 自動生成されたコネクタ名の変更
+
+REST Connect は、operationName、displayName、endpoint に基づいてこの順序で操作名を生成します。生成された名前を変更するには、REST Connect ライブラリを参照して GET、POST、DELETE などのメソッドから operationName アノテーションを使用するか、メソッドで displayName のテキストを変更します。
+
+displayName を使用した例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+title: Sample API
+baseUri: https://jsonplaceholder.typicode.com
+version: 0.1
+mediaType: application/json
+
+  ...
+  /{postId}:
+    uriParameters:
+      postId: integer
+
+    get:
+      displayName: Get a post by ID.
+      responses:
+        200:
+          body:
+            type: Post
+----
+
+REST Connect ライブラリを使用した例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+title: Sample API
+baseUri: https://jsonplaceholder.typicode.com
+version: 0.1
+mediaType: application/json
+
+uses:
+  rest-connect: exchange_modules/org.mule.connectivity/rest-connect-library/1.0.0/rest-connect-library.raml
+
+  ...
+  /{postId}:
+    uriParameters:
+      postId: integer
+
+    get:
+      (rest-connect.operationName): Retrieve a post by id
+      displayName: Get a post by ID.
+      responses:
+        200:
+          body:
+            type: Post
+----
+
+
+== メタデータの制限
+
+REST Connect は、要求内のスキーマ定義および RAML 内の各メソッドの応答に基づいて各操作のメタデータを生成します。REST Connect は RAML の例に基づいてメタデータを生成することはできません。
+
+== REST Connect 用の Design Center の OAuth2
+
+. Design Center で OAuth2 の認証コードと 1 つの操作を使用して API を定義します。次の GitHub API の例を使用できます。
++
+[source,text,linenums]
+----
+#%RAML 1.0
+version: v1
+title: Github API
+baseUri: https://api.github.com
+
+securitySchemes:
+ oauth_2_0:
+   description: |
+     OAuth2 is a protocol that lets external apps request authorization to private details
+     in a user's GitHub account without getting their password. This is preferred over
+     Basic Authentication because tokens can be limited to specific types of data,
+     and can be revoked by users at any time.
+   type: OAuth 2.0
+   describedBy:
+     headers:
+       Authorization:
+         description: |
+           Used to send a valid OAuth 2 access token.
+     responses:
+       404:
+         description: Unauthorized
+   settings:
+     authorizationUri: https://github.com/login/oauth/authorize
+     accessTokenUri: https://github.com/login/oauth/access_token
+     authorizationGrants: [ authorization_code ]
+     scopes:
+       - "user"
+       - "user:email"
+       - "user:follow"
+       - "public_repo"
+       - "repo"
+       - "repo_deployment"
+       - "repo:status"
+       - "delete_repo"
+       - "notifications"
+       - "gist"
+       - "read:repo_hook"
+       - "write:repo_hook"
+       - "admin:repo_hook"
+       - "admin:org_hook"
+       - "read:org"
+       - "write:org"
+       - "admin:org"
+       - "read:public_key"
+       - "write:public_key"
+       - "admin:public_key"
+
+/search:
+ /issues:
+   get:
+     displayName: Get Issues
+     queryParameters:
+       q:
+         displayName: Query
+         description: |
+           The search terms.
+         type: string
+         required: true
+       sort:
+         displayName: Sort
+         description: |
+           The sort field. Can be comments, created, or updated. Default: results are sorted by best match.
+         type: string
+         required: false
+       order:
+         displayName: Order
+         description: |
+           The sort order if a sort parameter is provided. One of asc or desc. Default: desc
+         type: string
+         required: false
+     responses:
+       200:
+         description: |
+           Successful call
+         body:
+           application/json:
+             type: string
+----
++
+. Design Center で「Github API」という名前の新しい API 仕様プロジェクトを作成し、上記の例をコピーして貼り付けます。API Designer から、[Publish to Exchange (Exchange にパブリッシュ)] をクリックします。
++
+image::rest-connect-publish-to-exchange.png[]
++
+. Design Center で HTTP リスナ、Github API、およびロガーのシンプルな Mule アプリケーションを作成します。このアプリケーションは `+https://my-app.cloudhub.io/getIssues+` をリスンし、検索語句に基づいて結果を返します。
++
+image::rest-connect-dc-flow.png[]
++
+. コネクタの認証コードを使用して OAuth 2.0 を設定します。ほとんどの項目は GitHub API 仕様に基づいて自動入力されます。
++
+image::rest-connect-api-config.png[]
++
+. GitHub アカウントのクライアント IDとクライアントシークレットを取得します。クライアント ID とクライアントシークレットは、GitHub の [Settings (設定)] > [Developer settings (開発者設定)] にあります。GitHub に OAuth アプリケーションがない場合は、[New OAuth App (新規 OAuth アプリケーション] で作成できます。
+. GitHub API のベース URL は api.github.com であるため、ベースパスに「/」を使用できます。
+. 外部コールバック URL を照合して変更します。コールバック URL は GitHub からアクセストークンを受け取ります。デフォルトでは、コネクタには `+http://my-app.cloudhub.io/callback+` が表示されますが、アプリケーションに合わせて変更する必要があります。デモアプリケーションのコールバック URL は `+http://githubapp-smky.cloudhub.io/callback+` であるため、「my-app」を「githubapp-smky」で置き換える必要があります。この情報は、Design Center でメニューに移動して [Copy Link (リンクをコピー)] を選択して取得できます。
++
+image::rest-connect-ready-to-deploy.png[]
++
+. 外部コールバック URL を取得したら、GitHub 設定で同じ URL を指定します。
++
+image::rest-connect-auth-callback-url.png[]
++
+. GitHub からアクセストークンを取得する準備が整いました。ブラウザで、この例の `+http://githubapp-smky.cloudhub.io/authorize+` (または `+http://my-app.cloudhub.io/authorize+` の my-app.cloudhub.io を [Copy Link (リンクをコピー)] で取得した値に置き換えた URL) に移動します。この URL にアクセスすると、GitHub にログインするように求められます。
+. アクセストークンが正常に発行されたら、`+http://my-app.cloudhub.io/getIssues+` (my-app.cloudhub.io を [`Copy link` (リンクをコピー)] で取得した値に置き換える) を使用して、GitHub から Salesforce 関連の問題を取得できます。

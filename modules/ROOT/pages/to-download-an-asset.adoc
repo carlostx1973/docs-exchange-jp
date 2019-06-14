@@ -1,0 +1,32 @@
+= アセットのダウンロード
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+ダウンロードでは、アセットのコピー、またはカスタムアセットの場合は作成時にアセットに添付された省略可能なファイルをダウンロードできます。
+
+REST アセットを作成したら、Exchange によって Mule 3 コネクタと Mule 4 コネクタが生成されます。RAML アセットの OAS バージョン、および OAS アセットの RAML バージョンも生成されます。新しい REST アセットを作成してからそれらのアセットが [Download (ダウンロード)] メニューに表示されるまで、数分かかることがあります。
+
+上部のタスクバーで [Download (ダウンロード)] ボタン image::ex2-icon-download.png[] をクリックします。
+
+結果はファイルの種類によって異なります。
+
+* RAML: 下矢印をクリック。
++
+image::ex2-download-from-raml.png[]
++
+[As RAML (RAML として)] を選択した場合、元の RAML ファイルが zip ファイルとしてダウンロードされます。[As OAS (OAS として)] を選択した場合、API 仕様がその仕様の JSON ファイルを含む zip ファイルとしてダウンロードされます。[As Mule 4 connector (Mule 4 コネクタとして)] を選択した場合、Studio 7 Mule プロジェクトに追加できる jar ファイルとしてダウンロードされます。[As Mule 3 connector (Mule 3 コネクタとして)] を選択した場合、Studio 6 Mule プロジェクトに追加できる zip ファイルとしてダウンロードされます。
++
+* OAS: 下矢印をクリック。
++
+image::ex2-download-from-oas.png[]
++
+[As RAML (RAML として)] を選択した場合、API 仕様がその仕様の RAML ファイルを含む zip ファイルとしてダウンロードされます。[As OAS (OAS として)] を選択した場合、元の JSON 形式または YAML 形式のファイルを含む zip ファイルとしてダウンロードされます。[As Mule 4 connector (Mule 4 コネクタとして)] を選択した場合、Studio 7 Mule プロジェクトに追加できる jar ファイルとしてダウンロードされます。[As Mule 3 connector (Mule 3 コネクタとして)] を選択した場合、Studio 6 Mule プロジェクトに追加できる zip ファイルとしてダウンロードされます。
++
+* WSDL: WSDL ファイルとしてダウンロード。
+* Connector (コネクタ): jar ファイルとしてダウンロード。
+* Template (テンプレート): jar または zip ファイルとしてダウンロード。
+* Example (サンプル): zip ファイルとしてダウンロード。
+* Custom (カスタム) (ファイルあり): アップロードしたファイルと同じ形式のファイルをアプリケーション名に基づくファイル名でダウンロード。たとえば、Inventory Distribution (在庫物流) プロジェクトのテキストファイルをアップロードした場合、inventory-distribution.txt がダウンロードされます。
+* Custom (カスタム) (ファイルなし): [Download (ダウンロード)] ボタンは非表示。

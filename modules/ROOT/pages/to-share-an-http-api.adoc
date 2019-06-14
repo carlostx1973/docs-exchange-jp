@@ -1,0 +1,17 @@
+= HTTPS API アセットの共有
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+HTTP API では、非公開 Exchange ユーザがエンドポイントのプレースホルダを指定できます。HTTP API エンドポイントを作成したら、必要に応じて API Manager を使用してエンドポイントを管理できます。
+
+HTTP API アセットには、API エンドポイントの機能、およびユーザがプログラムで使用するために API をどのように利用できるかについての説明が含まれます。
+
+ユーザ は API Manager を利用して Exchange から API をインポートし、プロキシを関連付けてその API のポリシーと SLA を管理できます。
+
+. 非公開 Exchange で、[New (新規)] をクリックします。
+. API に名前を付けて、[Asset Type (アセットタイプ)] で [API - HTTP] をクリックします。
+. [Publish (パブリッシュ)] をクリックします。
+. アセットビューで、[Edit (編集)] をクリックして説明を入力します。
+. [Save As Draft (ドラフトとして保存)] をクリックして [Publish (パブリッシュ)] をクリックします。

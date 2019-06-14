@@ -1,0 +1,83 @@
+= FAQ: Exchange 1 (旧バージョン)
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:keywords: FAQ, Exchange
+
+[NOTE]
+このページでは、レガシー製品の Exchange 1 について説明します。すべてのユーザが現在のバージョンの xref:index.adoc[Exchange 2] にxref:migrate.adoc[移行]することをお勧めします。
+
+== 非公開 Exchange を作成する方法は?
+
+`+https://anypoint.mulesoft.com/exchange1+` で Exchange にアクセスし、[Login (ログイン)] をクリックします。[Add Item (項目を追加)] をクリックして新規アセットを作成します。
+
+Anypoint Exchange 1 はファイルをホストしませんが、それらへのリンクを提供します。非公開 Excange に
+追加するコンテンツは、HTTP サービスを介してホストされている必要があります。
+
+== コネクタのインストールボタンがない理由は?
+
+コネクタをインストールするには、最初に Anypoint Studio を開き、Studio タスクバーの Exchange アイコンをクリックします。
+
+image::ex1-icon.png[Studio の Exchange ボタン]
+
+コネクタを見つけてインストールできます。
+
+Exchange 1 を使用するには、[Preferences (プリファレンス)] > [Anypoint Studio] > [Exchange] をクリックし、[Exchange Settings URL (Exchange設定 URL)] の値を https://anypoint.mulesoft.com/exchange1/ に設定します。
+
+== サンプルとテンプレートの違いは?
+
+サンプルは、ユースケースまたはソリューションの処理方法が示される、Studio にインポートして実行可能な Studio プロジェクトです。
+
+テンプレートは、追加の Studio ビルディングブロックで拡張してソリューションを作成できる、ユースケースの事前設定の開始点となるインポート可能な Studio プロジェクトです。
+
+== 非公開 Exchange の左のナビゲーション領域に新しいカテゴリを追加する方法は?
+
+サイトの所有者または​*組織の管理者*​ロールを持つユーザの場合、次の手順を実行します。
+
+. Anypoint Platform の *Exchange 管理者*​ロールが付与されていることを確認します。
+. [Exchange] をクリックし、[Edit Terms (用語を編集)] をクリックして Exchange のカテゴリを追加または名前変更します。
+. カテゴリを表示するには、オブジェクトと検索条件が必要です。C (コネクタ)、T (テンプレート)、E (サンプル)、R (RAML)、W (WSDL)、または O (その他) のオブジェクトの丸ボタンのうち 1 つ以上をクリックします。
++
+image::ex1-category-objects.png[オブジェクトカテゴリの設定ボタン]
++
+. 用語を編集したら [Save Changes (変更を保存)] をクリックするか、変更を中止する場合は [Discard (破棄)] をクリックします。
+
+注意: カテゴリを作成する場合は、マスタ組織に属している必要がありますビジネスグループ内にカテゴリを作成した場合、そのカテゴリは表示されません。
+
+
+== Mule プロジェクトでもコネクタでもないホワイトペーパー、Word ドキュメントなどをパブリッシュできますか？
+
+各ドキュメントが共有されない場合、それぞれに API Portal を使用して、そのポータルの URL を Exchange 項目で指定できます。各ドキュメントがネットワークで共有される場合、Exchange で新しい [Others (その他)] 項目を作成し、その共有項目へのリンクを指定できます。
+
+== 非公開 Exchange をサードパーティなどの組織外のユーザと共有できますか?
+
+そのユーザを Anypoint Platform に招待すればできます。
+
+== コンテンツが承認されるまで他のユーザに表示されないようにする方法は?
+
+管理者でない限り、他のユーザは進行中の作業や未承認のオブジェクトを参照できません。Exchange コントリビュータおよび Exchange 閲覧者ロールを使用して、進行中の作業がユーザに表示されることを防止できます。
+
+== すでに API Portal がある場合、Exchange を使用する必要がありますか?
+
+はい。ただし、それぞれには異なる機能があります。Exchange は、1 つ以上の項目に関する情報、動画、およびドキュメントを共有するための共通のフレームワークを提供します。ポータルは、単一の API に関するダウンロード、リンク、および情報を提供します。ユーザは、ホワイトペーパーや Word ドキュメントなどの特定のドキュメントを検索するために API にアクセスすることはなく、API 間でこれらのドキュメントを検索することはできません。API Portal の最適な使用方法は、単一の API をドキュメント化し、その API に関連するドキュメントを共有し、Exchange を使用して各 API とそのドキュメントにアクセスできるようにすることです。
+
+== Studio から Exchange のユーザアカウントを変更する方法は?
+
+Studio でユーザアカウントを変更できます。Package Explorer でプロジェクトを右クリックし、[Anypoint Platform] > [Configure (設定)] > [Anypoint Studio] > [Authentication (認証)] > [Add (追加)] をクリックします。[Anypoint Platform Sign In (Anypoint Platform サインイン)] メニューで、Anypoint Platform のユーザ名とパスワードを入力します。[Sign In (サインイン)] をクリックします。初めて Anypoint Platform にアクセスするときに [Anypoint Platform Sign In (Anypoint Platform サインイン)] メニューを使用することもできます。
+
+== ユーザがビジネスグループのコンテンツを参照する方法は?
+
+ユーザは Exchange 閲覧者ロールに割り当てられている必要があります。Exchange 閲覧者ロールに割り当てられていないユーザはマスタ組織を参照できますが、ビジネスグループは参照できません。ユーザがビジネスグループに招待された場合、[Roles (ロール)] でアクセス権が割り当てられるまで他のビジネスグループは参照できません。
+
+Exchange 閲覧者アクセス権を割り当てるには、Anypoint Platform にサインインして [Access Management (アクセス管理)] > [Roles (ロール)] をクリックします。[Exchange Viewers (Exchange 閲覧者)] をクリックし、青いプラス記号をクリックしてユーザを追加します。
+
+== Exchange に追加する WSDL をホストする場所は?
+
+WSDL は任意の Web サーバからホストできます。Exchange でエントリを作成するときに、
+WSDL へのリンクを指定するだけです。
+
+== 関連情報
+
+* https://anypoint.mulesoft.com/exchange1/#!/[Anypoint Exchange 1]。
+* https://anypoint.mulesoft.com/exchange1/#!/?types=template[Anypoint Exchange でのテンプレートの表示]。
+* https://anypoint.mulesoft.com/exchange1/#!/?types=example[Anypoint Exchange でのサンプルの表示]。

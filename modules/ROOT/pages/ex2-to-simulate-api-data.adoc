@@ -1,0 +1,41 @@
+= REST API のデータのシミュレーション
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Exchange では、OAS または RAML REST API をテストするためのシミュレーションデータを提供できます。シミュレーションデータは、モッキングサービス機能で提供されます。
+
+データアクセスのシミュレーション (モッキングサービス) は、Exchange で次の場所に表示されます。
+
+* アセット詳細画面の右側に表示される API Console 内。モッキングサービスでは、シミュレーションデータを API 関数に追加し、そのデータを使用して API をテストできます。
++
+image::ex2-api-console.png[API Console 内のモッキング]
++
+* API の各バージョンのインスタンスとして。
++
+image::ex2-mock-in-versions.png[バージョン内のモッキングインスタンス]
++
+* モッキングサービス URL がリストされる [API Instances (API インスタンス)]。
++
+image::ex2-api-instances.png[[API Instances (API インスタンス)] のモッキングサービス URL]
+
+== API でシミュレーションデータを受け入れる
+
+. [Design Center] > [API Specification (API 仕様)] から、実装で返されるサンプルデータを指定します。または、テキストエディタで OAS (Swagger) 仕様を作成し、そこにサンプルデータを追加することもできます。
+. REST 仕様で、成功した API コールの HTTP 状況コードを指定します。
+
+== シミュレーションデータで REST API をテストする
+
+. Exchange で、REST API をクリックします。
+. [GET] などの関数をクリックします。
+. 画面の右側の API Console で、[Send (送信)] をクリックしてシミュレーションデータを API に送信します。
++
+image::ex2-send-sim-data-to-api.png[REST 関数へのシミュレーションデータの送信]
++
+Exchange によってデータが送信され、応答がリストされます。この例では、成功を示す HTTP 200 OK の状況が返され、シミュレーションデータを使用して API から送信されたデータがリストされます。
+
+== 関連情報
+
+* xref:to-change-raml-version.adoc[REST API バージョンの変更]
+* xref:design-center::design-mocking-service.adoc[API へのコールのシミュレーション]

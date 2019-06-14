@@ -1,0 +1,22 @@
+= API のドキュメント化
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange では、API の各機能を説明し、ユーザがさまざまな値の API への送信と出力の受信を試すことができるテスト領域を提供する、API Notebook を作成できます。
+
+API Notebook を作成したら、必要に応じてそのノートが非公開か公開かを制御する API インスタンスを作成できます。ノートのインスタンスを非公開に設定することで、組織内の他のユーザがそのノートを確認できるようになります。準備が整ったら、API Notebook を公開するように API インスタンスを設定できます。
+
+注意: API Notebook は、API インスタンスの使用とは無関係です。
+RAML でベース URI を使用しない場合、または API インスタンスを使用しない場合、モッキングサービスを使用してテストデータを生成できます。
+
+トピック:
+
+* xref:to-use-api-notebook.adoc[API Notebook を使用したアセットのドキュメント化]
+* xref:to-configure-api-settings.adoc[API インスタンスの設定]
+
+== 関連情報
+
+* xref:to-describe-an-asset.adoc[アセットの説明]
+* xref:to-publish-an-asset.adoc[アセットのドラフトコンテンツのパブリッシュ]

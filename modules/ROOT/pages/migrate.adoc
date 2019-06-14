@@ -1,0 +1,88 @@
+= Exchange 1 からのアセットの移行
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+Anypoint Exchange 2 では、アセットを使用するための新しい方法が導入されました。Exchange 1 はアセットの保存場所へのリンクのみを提供するリストサービスであるのに対して、Exchange 2 はアセットを保存するパッケージ管理システムです。
+
+Exchange 2 への移行は、アセットタイプによって異なります。
+
+[%header,cols="30a,70a"]
+|===
+|アセットタイプ |移行方法
+|Example (サンプル)、Template (テンプレート) |Maven - xref:to-publish-assets-maven.adoc[「Maven を使用した Exchange アセットのパブリッシュとデプロイ」]を参照。
+|OAS REST API |Exchange を使用してパブリッシュ。
+|RAML REST API |API Designer または Exchange を使用してパブリッシュ。
+|WSDL SOAP API |Exchange を使用してパブリッシュ。
+|Connectors (コネクタ) |Node.js connector-uploader プログラムを使用。
+|===
+
+== サンプルまたはテンプレートを Exchange に移行する
+
+注意: この手順には Maven が必要です。
+
+. Anypoint Exchange 1 の非公開 Exchange のサンプルまたはテンプレートで、[Download (ダウンロード)] をクリックしてアセットをコンピュータにコピーします。
+. Anypoint Studio 6.4.1 以降を開き、[File (ファイル)] > [Import (インポート)] をクリックします。
+. [Import (インポート)] メニューで、[Anypoint Studio] > [Anypoint Studio Generated Deployable Archive (.zip) (Anypoint Studio で生成されたデプロイ可能なアーカイブ (.zip))] をクリックします。[Next (次へ)] をクリックします。zip ファイル名で、`...` 参照ボタンをクリックし、ダウンロードした zip ファイルの名前をクリックして [Open (開く)] をクリックします。
+. [Finish (完了)] をクリックしますランタイムバージョンで [OK] をクリックします。
+. 以前に Maven を使用したことがない場合は、Package Explorer でプロジェクト名を右クリックし、[Mule] >
+[Configure Maven (Maven を設定)] をクリックして Maven をダウンロードしたフォルダを見つけます。
+Studio で、[Test Maven Configuration (Maven 設定をテスト)] をクリックして Maven の使用準備が整っていることを確認し、[OK] をクリックします。
++
+Maven の準備が整ったら、Package Explorer でプロジェクト名を右クリックし、[Mule] > [Mavenize (Maven 化)] をクリックします。
+[Maven Support (Maven サポート)] プロンプトで、[Yes (はい)] をクリックします。
++
+. [Action to Perform (実行するアクション)] メニューで、[OK] をクリックします。
+. プロジェクト名を右クリックし、[Anypoint Platform] > [Publish to Exchange (Exchange にパブリッシュ)] をクリックします。
+. Anypoint Platform のユーザ名とパスワードの入力が促されます。[Signin (サインイン)] をクリックしますまたは、[Configure (設定)] をクリックし、OAuth や組織のドメインなどの外部 ID プロバイダを指定します。
+. [Publish to Exchange (Exchange にパブリッシュ)] メニューで、次の操作を実行します。
+.. [Name (名前)] 項目内にアンダースコアや括弧などの特殊文字がある場合、その文字を削除します。文字、数字、スペース、ドット、およびダッシュのみが許可されています。
+.. [Version (バージョン)] 項目内に `-SNAPSHOT` 値がある場合は、その値を削除します。
+.. 必要に応じて、[Project Type (プロジェクトタイプ)] を [Example (サンプル)] または [Template (テンプレート)] に設定します。
+. 必要なすべての項目を設定したら、[FInish (完了)] をクリックします。[Proceed Anyway (このまま続行)] プロンプトで [Yes (はい)] をクリックします。
+. 正常にデプロイされたら、Exchange 2 でアセットを参照できるリンクが表示されます。そのリンクをクリックします。
+. Exchange 2 でアセットをクリックし、[Edit (編集)] をクリックします。Exchange エディタで、[Visual (ビジュアル)] をクリックします。Exchange 1 の説明テキストをコピーし、Exchange 2 エディタでその説明を貼り付けます。必要に応じて書式設定します。[Save As Draft (ドラフトとして保存)]
+をクリックして編集を保存します。[Publish (パブリッシュ)] をクリックします。
+. Studio で、[OK] をクリックして [Publish to Exchange (Exchange にパブリッシュ)] メニューを閉じます。
+
+== SOAP API WSDL を移行する
+
+. Exchange 1 に移動し、WSDL ファイルをダウンロードします。
+. Exchange 2 に移動し、[New (新規)] をクリックします。
+. タイプドロップダウンで [API Spec - WSDL (API 仕様 - WSDL)] を選択します。
+. [File (ファイル)] 項目で WSDL ファイルを選択します。
+. 残りの項目に入力します。
+. [Create (作成)] をクリックします。
+
+== REST API RAML を移行する
+_2017 年 11 月リリースが必要_
+
+. API の API Manager ポータルに移動し、API 仕様を zip ファイルとしてエクスポートします。
+. Design Center API Designer に移動し、[API Specification (API 仕様)] タイプのプロジェクトを作成します。
+. zip をインポートします。
+. Exchange 2 にパブリッシュします。
+
+== Exchange 1 のコネクタを Exchange 2 に移行する
+
+. NPM をダウンロードしてインストールします。
+. 非公開 Exchange にログインし、コネクタをコンピュータにダウンロードします。
+. コネクタの JAR ファイル、pom.xml ファイル、および Studio プラグイン zip ファイルを見つけます。
+. connector-uploader Node.js アプリケーションを取得します。
++
+----
+npm install -g connector-uploader
+----
++
+. アップロードプログラムを実行します。
++
+----
+connector-uploader
+----
++
+. 促されたら、コネクタのアップロード先組織の Anypoint Platform ログイン情報を入力します。ビジネスグループを選択してアセット ID とバージョンを入力するように求められます。グループ ID は自動的に生成されます。複数のコネクタをアップロードする場合、アップロードする各ファイルを指定するように求められます。
+
+== 関連情報
+
+* https://youtu.be/BOAR9glreMw[SOAP アセットの移行動画]
+* https://youtu.be/WTIJrYydViQ[RAML REST アセットの移行]

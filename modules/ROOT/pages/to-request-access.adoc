@@ -1,0 +1,50 @@
+= アクセス権の要求
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+クライアント ID 適用ポリシーによって保護されている API では、API コンシューマがクライアント ID とクライアントシークレットを保持するアプリケーションを作成する必要があります。これにより、アプリケーションが API にアクセスし、API 開発者にコンシューマ分析を提供できます。
+
+アセットに契約条件が設定されている場合、アクセス権を付与する前に契約条件に同意するように求められます。
+
+. API アセットをクリックして詳細を表示します。
+. [Request Access (アクセス権の要求)] をクリックします。
+. アクセス権を付与するアプリケーションがない場合、[Request Access (アクセス権の要求)] メニューの [Create A New Application (新規アプリケーションを作成)] をクリックします。詳細は、下記を参照してください。
+. 既存のアプリケーションを使用する場合、アプリケーションのリストから選択します。
+. API のリストから API インスタンスを選択します。
+. アプリケーションのサービスレベル契約 (SLA) の値を選択します。
+. [Request Access (アクセス権の要求)] をクリックします。
++
+[Request API Access (API アクセス権の要求)] メニューが開き、API アクセスが成功したことが示されます。この画面には、この API アクセスインスタンスのクライアント ID とクライアントシークレットがリストされます。
+
+== 新規アプリケーションを作成する
+
+以下の画面で何を提供するかを選択します。
+
+* 組織が OAuth 認証を使用している場合、次の画面が表示されます
++
+image::ex2-edit-app2.png[スクリーンショット - 新規アプリケーションを作成]
++
+次の値を指定します。
++
+** アプリケーション名。
+** アプリケーションの省略可能な説明。
+** アプリケーションが存在する場所の省略可能なアプリケーション URL。指定しない場合、アプリケーションは Runtime Manager 内にあるとみなされます。
+** OAuth 2 コールバックの省略可能な URL。
+
+* 組織が外部認証を使用している場合、次の画面が表示されます
++
+image::ex2-edit-app.png[スクリーンショット - 外部認証]
++
+上記と同じ値に加えて、次の値を指定します。
++
+OAuth 2 許可種別:
++
+** Implicit Grant (暗黙的許可)
+** Authorization Code Grant (認証コード許可)
+** Refresh Token (更新トークン)
+
+== 関連情報
+
+* https://www.google.com/search?q=oauth2+implicit+grant+vs+authorization+code+grant+refresh+token&oq=oauth2+implicit+grant+vs+authorization+code+grant+refresh+token[許可種別を検索して比較]
