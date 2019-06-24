@@ -35,7 +35,7 @@ Exchange 内の RAML および OAS API 仕様では、Exchange ユーザイン�
 
 image::ex-add-new-version.png[]
 
-これにより、(「<<Deploy a New API Version>>」で示されている) *[Publish a new asset (新規アセットをパブリッシュ)]* ウィンドウが開きます。
+これにより、(「<<新しい API バージョンのデプロイ>>」で示されている) *[Publish a new asset (新規アセットをパブリッシュ)]* ウィンドウが開きます。
 
 *[File upload (ファイルのアップロード)]*、*[Main file (メインファイル)]*、および *[Version (バージョン)]* 項目は必須です。
 
