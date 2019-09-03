@@ -20,7 +20,7 @@ image::ex2-deprecate-version.png[スクリーンショット - バージョン�
 . [Deprecate (非推奨)] をクリックし、バージョンが無効になったかサポートされなくなり、コンシューマはまだ使用していることを示します。非推奨にすると、アセットを使用可能なままにすることができます。
 . 確認メッセージが表示されたらアクションを確認するか、[Cancel (キャンセル)] をクリックしてメッセージを閉じます。
 
-バージョンが非推奨になったら、ユーザには「`This version has been deprecated` (このバージョンは非推奨です)」メッセージが表示されます。
+バージョンが非推奨になったら、ユーザには「​`This version has been deprecated`​ (このバージョンは非推奨です)」メッセージが表示されます。
 
 image::ex2-deprecated-revert.png[スクリーンショット - This version has been deprecated (このバージョンは非推奨です)]
 

@@ -6,18 +6,18 @@ endif::[]
 
 Anypoint Exchange では、非公開 Exchange と Exchange ポータルでアセットを共有できます。
 
-. xref:to-create-an-asset.adoc[アセットの作成] - アセットを共有するには、Exchange でアセットを作成する必要があります。
-. xref:to-describe-an-asset.adoc[アセットの説明] - 説明、追加ページ、契約条件、タグを追加し、バージョンを変更する方法。
-. xref:ex2-to-simulate-api-data.adoc[REST API のデータのシミュレーション] - モッキングサービスを使用して、シミュレーションデータで OAS または RAML REST API をテストします。
-. xref:to-download-an-asset.adoc[アセットのダウンロード] - アセットをコンピュータにコピーします。
-. xref:to-share-api-asset-to-portal.adoc[公開ポータルでのアセットの共有] - 外部ユーザが API にアクセスできるように、公開ポータルに API アセットをリストします。
-. xref:to-manage-categories.adoc[カテゴリの管理] - アセットをカテゴリに分類します。
-. xref:to-delete-asset.adoc[アセットの削除] - アセットを削除します。
-. xref:to-publish-an-asset.adoc[アセットのパブリッシュ] - アセットをパブリッシュして他のユーザが参照できるようにします。
-. xref:to-change-raml-version.adoc[RAML バージョンの変更] - RAML アセットのバージョンを更新します。
-. xref:to-share-an-http-api.adoc[HTTP API アセットの共有] - 非公開 Exchange を使用する場合、HTTP API を使用してエンドポイントのプレースホルダを指定できます。
-. xref:exchange2-faq.adoc[FAQ] - よくある質問。
+. ​xref:to-create-an-asset.adoc[アセットの作成]​ - アセットを共有するには、Exchange でアセットを作成する必要があります。
+. ​xref:to-describe-an-asset.adoc[アセットの説明]​ - 説明、追加ページ、契約条件、タグを追加し、バージョンを変更する方法。
+. ​xref:ex2-to-simulate-api-data.adoc[REST API のデータのシミュレーション]​ - モッキングサービスを使用して、シミュレーションデータで OAS または RAML REST API をテストします。
+. ​xref:to-download-an-asset.adoc[アセットのダウンロード]​ - アセットをコンピュータにコピーします。
+. ​xref:to-share-api-asset-to-portal.adoc[公開ポータルでのアセットの共有]​ - 外部ユーザが API にアクセスできるように、公開ポータルに API アセットをリストします。
+. ​xref:to-manage-categories.adoc[カテゴリの管理]​ - アセットをカテゴリに分類します。
+. ​xref:to-delete-asset.adoc[アセットの削除]​ - アセットを削除します。
+. ​xref:to-publish-an-asset.adoc[アセットのパブリッシュ]​ - アセットをパブリッシュして他のユーザが参照できるようにします。
+. ​xref:to-change-raml-version.adoc[RAML バージョンの変更]​ - RAML アセットのバージョンを更新します。
+. ​xref:to-share-an-http-api.adoc[HTTP API アセットの共有]​ - 非公開 Exchange を使用する場合、HTTP API を使用してエンドポイントのプレースホルダを指定できます。
+. ​xref:exchange2-faq.adoc[FAQ]​ - よくある質問。
 
 == 関連情報
 
-*  xref:about-api-use.adoc[API 管理] - プログラムでアセットを共有します。
+*  ​xref:about-api-use.adoc[API 管理]​ - プログラムでアセットを共有します。

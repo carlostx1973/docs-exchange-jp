@@ -8,7 +8,7 @@ Anypoint Exchange には、アセットとリソースを検索、共有し、�
 
 == はじめに
 
-. 公開 https://www.anypoint.mulesoft.com/exchange/[Exchange] から、アセットをクリックしてその説明を表示します。
+. 公開 ​&#8203;https://www.anypoint.mulesoft.com/exchange/[Exchange]​ から、アセットをクリックしてその説明を表示します。
 . [Login (ログイン)] をクリックして組織の非公開 Exchange を表示します。
 . ログインしたら、組織の [Public Portal (公開ポータル)] をクリックし、全員が使用可能な公開 API を表示します。
 
@@ -49,9 +49,9 @@ Exchange の公開コンテンツと非公開コンテンツは両方とも、�
 
 このページは、現在のバージョンである Exchange 2 に適用されます。
 
-Exchange 1 のドキュメントは、xref:about-exchange1.adoc[「Exchange 1 (旧バージョン) について」]を参照してください。Exchange 1 ユーザは Exchange 2 にxref:migrate.adoc[移行]することをお勧めします。
+Exchange 1 のドキュメントは、​xref:about-exchange1.adoc[「Exchange 1 (旧バージョン) について」]​を参照してください。Exchange 1 ユーザは Exchange 2 に​xref:migrate.adoc[移行]​することをお勧めします。
 
-完全なバージョン履歴は、xref:release-notes::exchange/anypoint-exchange-release-notes.adoc[「Anypoint Exchange リリースノート」]を参照してください。
+完全なバージョン履歴は、​xref:release-notes::exchange/anypoint-exchange-release-notes.adoc[「Anypoint Exchange リリースノート」]​を参照してください。
 
 == 関連情報
 

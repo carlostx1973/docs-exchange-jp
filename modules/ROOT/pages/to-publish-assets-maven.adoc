@@ -4,7 +4,13 @@ include::_attributes.adoc[]
 endif::[]
 :imagesdir: ../assets/images/
 
-Anypoint Exchange には、Maven クライアントが Maven を使用してアセットをパブリッシュおよびコンシュームできる https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-maven-facade-api-http/[Maven Facade] が用意されています。Maven Facade では、コネクタ、サンプル、およびテンプレートを Exchange アセットとしてパブリッシュできます。Exchange で直接 API をパブリッシュできます。Maven Facade を使用して API をパブリッシュすることもできます。
+Anypoint Exchange の https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-maven-facade-api-​&#8203;http/[Maven Facade]​ を使用して、Maven クライアントは次の Exchange アセットをパブリッシュおよびコンシュームできます。
+
+* コネクタ
+* Mule アプリケーション
+* 例
+* テンプレート
+* ポリシー
 
 == 前提条件
 
@@ -36,20 +42,20 @@ Maven POM ファイルの要素を作成するには、組織 ID を判断する
 アセットをマスタ組織にパブリッシュする場合、グループ ID は組織 ID と同じです。
 次の URL 形式を使用します。
 +
-`+https://maven.anypoint.mulesoft.com/api/v1/organizations/ORGANIZATION_ID/maven+`
+​`+https://maven.anypoint.mulesoft.com/api/v1/organizations/ORGANIZATION_ID/maven+`​
 +
 EU では、次の形式を使用します。
 +
-`+https://maven.eu1.anypoint.mulesoft.com/api/v1/organizations/ORGANIZATION_ID/maven+`
+​`+https://maven.eu1.anypoint.mulesoft.com/api/v1/organizations/ORGANIZATION_ID/maven+`​
 +
 アセットをビジネスグループにパブリッシュする場合、グループ ID はビジネスグループ ID と同じです。
 次の URL 形式を使用します。
 +
-`+https://maven.anypoint.mulesoft.com/api/v1/organizations/BUSINESS_GROUP_ID/maven+`
+​`+https://maven.anypoint.mulesoft.com/api/v1/organizations/BUSINESS_GROUP_ID/maven+`​
 +
 EU では、次の形式を使用します。
 +
-`+https://maven.eu1.anypoint.mulesoft.com/api/v1/organizations/BUSINESS_GROUP_ID/maven+`
+​`+https://maven.eu1.anypoint.mulesoft.com/api/v1/organizations/BUSINESS_GROUP_ID/maven+`​
 +
 . プロジェクトの POM ファイルのプロパティ部分にアセットタイプを追加します。例:
 +
@@ -65,13 +71,13 @@ EU では、次の形式を使用します。
  ...
 ----
 +
-*注意:*
+​*注意:*​
 +
-** *重要:* `<classifier>` 要素は Exchange でアセットを表示するように設定されている必要がある。 
-** Mule 3 アプリケーションは、プロパティ <type> を `app` に設定してデプロイ可能。そのアセットは Exchange アセットリストに表示されません。
-** Mule 3 の `templates` と `examples` は Anypoint Studio 6.3 以上を使用してデプロイする必要がある。
-** Mule 3 または Mule 4 コネクタの場合、`<type>` 値を指定しない。Maven Facade によって自動的にタイプが判断されます。
-** Mule 4 アセットの場合、<type> 要素を指定しない。`mule-maven-plugin` 設定で、`<classifier>` を `mule-application` (デフォルト)、`mule-application-template`、`mule-application-example`、または `mule-policy` に設定します。
+** ​*重要:*​ ​`<classifier>`​ 要素は Exchange でアセットを表示するように設定されている必要がある。 
+** Mule 3 アプリケーションは、プロパティ <type> を ​`app`​ に設定してデプロイ可能。そのアセットは Exchange アセットリストに表示されません。
+** Mule 3 の ​`templates`​ と ​`examples`​ は Anypoint Studio 6.3 以上を使用してデプロイする必要がある。
+** Mule 3 または Mule 4 コネクタの場合、​`<type>`​ 値を指定しない。Maven Facade によって自動的にタイプが判断されます。
+** Mule 4 アセットの場合、<type> 要素を指定しない。​`mule-maven-plugin`​ 設定で、​`<classifier>`​ を ​`mule-application`​ (デフォルト)、​`mule-application-template`​、​`mule-application-example`​、または ​`mule-policy`​ に設定します。
 +
 例:
 +
@@ -123,9 +129,9 @@ EU では、POM ファイルは次のようになります。
   ...
 ----
 +
-*注意:* <id> および <name> 要素は、リポジトリやその他の組織識別子を識別するために作成した任意の名前です。<id> の値は pom.xml ファイル内と ~/.m2/settings.xml ファイル内で同じである必要があります。<id> により、pom.xml ファイルが組織の URL にログインするための情報と関連付けられます。
+​*注意:*​ <id> および <name> 要素は、リポジトリやその他の組織識別子を識別するために作成した任意の名前です。<id> の値は pom.xml ファイル内と ~/.m2/settings.xml ファイル内で同じである必要があります。<id> により、pom.xml ファイルが組織の URL にログインするための情報と関連付けられます。
 +
-. Maven の .m2 ディレクトリにある settings.xml ファイルを更新します。Maven をインストールしたら、`mvn clean` コマンドで .m2 ディレクトリを作成します。Mac または Linux では、このディレクトリは `~/.m2` にあり、Windows では、このディレクトリは Anypoint Platform ログイン情報を含む `<default-drive>\Users\YOUR_USER_NAME\.m2` にあります。Maven が実行されると、Maven クライアントは設定ファイルを読み取ります。
+. Maven の .m2 ディレクトリにある settings.xml ファイルを更新します。Maven をインストールしたら、​`mvn clean`​ コマンドで .m2 ディレクトリを作成します。Mac または Linux では、このディレクトリは ​`~/.m2`​ にあり、Windows では、このディレクトリは Anypoint Platform ログイン情報を含む ​`<default-drive>\Users\YOUR_USER_NAME\.m2`​ にあります。Maven が実行されると、Maven クライアントは設定ファイルを読み取ります。
 +
 settings.xml ファイルの例:
 +
@@ -157,7 +163,7 @@ mvn deploy
 https://anypoint.mulesoft.com/exchange/api/v1/assets/ORGANIZATION_ID/ASSET_ID
 ----
 +
-ORGANIZATION_ID を Exchange の組織 ID に置き換え、ASSET_ID をアセット ID に置き換えます。
+​ORGANIZATION_ID​ を Exchange の組織 ID に置き換え、​ASSET_ID​ をアセット ID に置き換えます。
 +
 EU の場合、共有 URL は次のようになります。
 +
@@ -173,8 +179,8 @@ https://eu1.anypoint.mulesoft.com/exchange/api/v1/assets/ORGANIZATION_ID/ASSET_I
 https://anypoint.mulesoft.com/accounts/api/profile
 ----
 +
-. 表示された値で `access_token` を検索します。
-. アクセストークンを `+~/.m2/settings.xml+` (Mac または Linux) または `C:\Users\YOUR_USER_NAME\.m2\settings.xml` (Windows) ファイルに追加します。
+. 表示された値で ​`access_token`​ を検索します。
+. アクセストークンを ​`+~/.m2/settings.xml+`​ (Mac または Linux) または ​`C:\Users\YOUR_USER_NAME\.m2\settings.xml`​ (Windows) ファイルに追加します。
 +
 [source,xml,linenums]
 ----
@@ -194,12 +200,23 @@ https://anypoint.mulesoft.com/accounts/api/profile
 ----
 
 [IMPORTANT]
-`<username>` 内の値はリテラルです。変更しないでください。この値はプラットフォームにトークンを使用していることを伝えます。トークンは `<password>ACCESS_TOKEN</password>` で設定します。
+​`<username>`​ 内の値はリテラルです。変更しないでください。この値はプラットフォームにトークンを使用していることを伝えます。トークンは ​`<password>ACCESS_TOKEN</password>`​ で設定します。
+
+
+== Exchange 外部の連動関係
+
+現在、Java ライブラリと POM ファイルは Exchange アセットとしてはパブリッシュできません。
+
+Maven Central または MuleSoft Maven リポジトリに存在しない連動関係を宣言する Mule 4 拡張機能は現在サポートされていません。
+
+== Exchange アセットを文書化する
+
+Maven Facade を使用して、コネクタ、サンプル、テンプレートをパブリッシュすると、Exchange にドキュメントポータルが自動的に作成され、​xref:to-describe-an-asset.adoc[通常どおりにそれらを文書化]​できます。
 
 == Maven を使用して Exchange アセットをコンシュームする
 
-アセットの groupID、artifactID、および version をプロジェクトの pom.xml ファイルの `dependencies` セクションに追加し、
-Maven ファサードをリポジトリとして `repositories` セクションに追加します。
+Maven Facade を使用して、Exchange でパブリッシュされたコネクタ、Mule アプリケーション、REST API をコンシュームできます。Exchange アセットをコンシュームするには、アセットの groupID、artifactID、および version をプロジェクトの pom.xml ファイルの ​`dependencies`​ セクションに追加し、
+Maven ファサードをリポジトリとして ​`repositories`​ セクションに追加します。
 
 [source,xml,linenums]
 ----
@@ -231,9 +248,9 @@ Maven ファサードをリポジトリとして `repositories` セクション�
 </project>
 ----
 
-ORG_ID を組織 ID に置き換えます。
+​ORG_ID​ を組織 ID に置き換えます。
 
-`+https://maven.anypoint.mulesoft.com/api/v1/maven+` はマスタ組織にパブリッシュするデフォルトであるため、`+<url>+` 値で有効な URL として使用できます。EU では、URL として `+https://maven.eu1.anypoint.mulesoft.com/api/v1/maven+` を使用します。
+​`+https://maven.anypoint.mulesoft.com/api/v1/maven+`​ はマスタ組織にパブリッシュするデフォルトであるため、​`+<url>+`​ 値で有効な URL として使用できます。EU では、URL として ​`+https://maven.eu1.anypoint.mulesoft.com/api/v1/maven+`​ を使用します。
 
 EU では、<repositories> セクションは次のようになります。
 

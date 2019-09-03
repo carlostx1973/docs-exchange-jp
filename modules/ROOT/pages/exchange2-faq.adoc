@@ -6,11 +6,15 @@ endif::[]
 
 このトピックでは、よくある質問とその回答をまとめました。
 
-== レビューと承認のワークフローは?
+== ドラフトのレビューとパブリッシュに期待されるワークフローは?
 
-Exchange にはドラフト機能があります。組織はコントリビュータとパブリッシャ用の 2 つのロールを作成し、パブリッシュ
-待機中のページの URL をパブリッシャーロールのユーザと共有できます。ロールは [Anypoint Platform] > [Access Management (アクセス管理)]
-> [Roles (ロール)] で作成できます。ドラフト状態のコンテンツは、ドラフトがパブリッシュされるまで非表示になります。
+Exchange にはドラフト機能があります。ドラフト状態のコンテンツは、ドラフトがパブリッシュされるまで非表示になります。
+
+ユーザはドラフトを作成して 2 番目のユーザと URL を共有できます。2 番目のユーザはこれらのページをレビューし、パブリッシュすることができます。
+
+すべてのコントリビュータは、ドラフトをパブリッシュする権限を含め、同じ権限を持っています。職務の分離は Exchange によって適用されず、ユーザが順守する必要があります
+
+ユーザはドラフトを削除できます。それにより、ドラフトに加えられたすべての変更は破棄されます。
 
 == 開発者ポータルの最新のバージョンの場所は?
 
@@ -21,9 +25,9 @@ MuleSoft 開発者ポータルは https://anypoint.mulesoft.com/exchange/portals
 Anypoint Platform の組織のシステム管理者または Exchange 管理者が Exchange に初めてログインしたときに、
 公開ポータルが自動的に作成されます。ポータルへのリンクは左の
 ナビゲーションバーに表示されます。API アセットをポータルに追加したら、インターネットで
-表示されるようになります。ポータルにアセットを追加する方法については、<<whynoinpp,「アセットが公開ポータルに表示されない理由は?」>>を参照してください。
+表示されるようになります。ポータルにアセットを追加する方法については、​<<whynoinpp​,​「アセットが公開ポータルに表示されない理由は?」>>​を参照してください。
 
-ポータルの URL の形式は `+https://anypoint.mulesoft.com/exchange/portals/YOUR_LOGIN_NAME/+` です。
+ポータルの URL の形式は ​`+https://anypoint.mulesoft.com/exchange/portals/YOUR_LOGIN_NAME/+`​ です。
 
 [[whynoinpp]]
 == アセットが公開ポータルに表示されない理由は?
@@ -66,7 +70,7 @@ https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4
 
 == Exchange から RAML ファイルをダウンロードする API はありますか?
 
-https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-http/[Graph API (推奨)] または https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用できます。
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-graph-​&#8203;http/[Graph API (推奨)]​ または https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用できます。
 
 == API の所有者を変更する方法は?
 

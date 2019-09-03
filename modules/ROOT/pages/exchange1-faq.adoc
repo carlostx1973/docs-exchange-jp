@@ -5,11 +5,11 @@ endif::[]
 :keywords: FAQ, Exchange
 
 [NOTE]
-このページでは、レガシー製品の Exchange 1 について説明します。すべてのユーザが現在のバージョンの xref:index.adoc[Exchange 2] にxref:migrate.adoc[移行]することをお勧めします。
+このページでは、レガシー製品の Exchange 1 について説明します。すべてのユーザが現在のバージョンの ​xref:index.adoc[Exchange 2]​ に​xref:migrate.adoc[移行]​することをお勧めします。
 
 == 非公開 Exchange を作成する方法は?
 
-`+https://anypoint.mulesoft.com/exchange1+` で Exchange にアクセスし、[Login (ログイン)] をクリックします。[Add Item (項目を追加)] をクリックして新規アセットを作成します。
+​`+https://anypoint.mulesoft.com/exchange1+`​ で Exchange にアクセスし、[Login (ログイン)] をクリックします。[Add Item (項目を追加)] をクリックして新規アセットを作成します。
 
 Anypoint Exchange 1 はファイルをホストしませんが、それらへのリンクを提供します。非公開 Excange に
 追加するコンテンツは、HTTP サービスを介してホストされている必要があります。
@@ -32,9 +32,9 @@ Exchange 1 を使用するには、[Preferences (プリファレンス)] > [Anyp
 
 == 非公開 Exchange の左のナビゲーション領域に新しいカテゴリを追加する方法は?
 
-サイトの所有者または​*組織の管理者*​ロールを持つユーザの場合、次の手順を実行します。
+サイトの所有者または​​*組織の管理者*​​ロールを持つユーザの場合、次の手順を実行します。
 
-. Anypoint Platform の *Exchange 管理者*​ロールが付与されていることを確認します。
+. Anypoint Platform の ​*Exchange 管理者*​​ロールが付与されていることを確認します。
 . [Exchange] をクリックし、[Edit Terms (用語を編集)] をクリックして Exchange のカテゴリを追加または名前変更します。
 . カテゴリを表示するには、オブジェクトと検索条件が必要です。C (コネクタ)、T (テンプレート)、E (サンプル)、R (RAML)、W (WSDL)、または O (その他) のオブジェクトの丸ボタンのうち 1 つ以上をクリックします。
 +

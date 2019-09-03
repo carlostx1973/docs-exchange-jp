@@ -3,7 +3,7 @@ ifndef::env-site,env-github[]
 include::_attributes.adoc[]
 endif::[]
 
-Anypoint Exchange 1 は、クラウドおよびオンプレミスの Exchange の以前のバージョンです。Exchange 1 はレガシー製品です。すべてのユーザが現在のバージョンの xref:index.adoc[Exchange 2] にxref:migrate.adoc[移行]することをお勧めします。
+Anypoint Exchange 1 は、クラウドおよびオンプレミスの Exchange の以前のバージョンです。Exchange 1 はレガシー製品です。すべてのユーザが現在のバージョンの ​xref:index.adoc[Exchange 2]​ に​xref:migrate.adoc[移行]​することをお勧めします。
 
 Exchange 1 では、MuleSoft および非公開 Exchange のアセットを参照できます。
 

@@ -44,5 +44,5 @@ image::ex2-roles-chart2.png[チャート図 - ロールの表示権限とアク�
 
 == 関連情報
 
-* xref:access-management::roles.adoc[アクセス管理ロール]。
-* xref:access-management::managing-permissions.adoc[アクセス管理の権限の管理]。
+* ​xref:access-management::roles.adoc[アクセス管理ロール]​。
+* ​xref:access-management::managing-permissions.adoc[アクセス管理の権限の管理]​。

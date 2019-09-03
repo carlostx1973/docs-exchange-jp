@@ -1,0 +1,54 @@
+= アセットポータルのリソースの管理
+ifndef::env-site,env-github[]
+include::_attributes.adoc[]
+endif::[]
+:imagesdir: ../assets/images/
+
+アセットポータルには最大 100 個のリソースをアップロードできます。各画像は 1 つのリソースです。さらに追加しようとするとエラーが発生します。数を減らすためにリソースを削除してから制限数まで追加できます。
+
+以下の例は、Exchange Experience API を使用してアセットポータルでリソースをリスト、取得、削除する方法を示しています。
+
+== 認証
+
+Anypoint Platform にログインし、認証トークンを取得します。すべての要求でヘッダー ​`Authorization: bearer ACCESS_TOKEN`​ を使用します。
+
+[source,console]
+----
+ACCESS_TOKEN=$(curl https://anypoint.mulesoft.com/accounts/login \
+-XPOST -d "username=YOUR_USERNAME&password=YOUR_PASSWORD" | \
+jq -r ".access_token")
+----
+
+== API の使用
+
+すべてのリソースのリスト方法:
+
+[source,console]
+----
+curl https://anypoint.mulesoft.com/exchange/api/v2/assets/:groupId/:assetId/:version/portal/draft/resources \
+  -H 'Authorization: bearer YOUR_ACCESS_TOKEN'
+----
+
+特定のリソースの取得方法:
+
+[source,console]
+----
+curl https://anypoint.mulesoft.com/exchange/api/v2/assets/:groupId/:assetId/:version/portal/draft/resources/:resourceId \
+  -H 'Authorization: bearer YOUR_ACCESS_TOKEN'
+----
+
+特定のリソースの削除方法:
+
+[source,console]
+----
+ curl -X DELETE \
+  https://anypoint.mulesoft.com/exchange/api/v2/assets/:groupId/:assetId/:version/portal/draft/resources/:resourceId \
+  -H 'Authorization: bearer YOUR_ACCESS_TOKEN'
+----
+
+次のようにセットアップします。
+
+    groupId: アセットのグループ ID
+    assetId: アセットのアセット ID
+    version: アセットのバージョン
+    resourceId: 画像ファイル名。

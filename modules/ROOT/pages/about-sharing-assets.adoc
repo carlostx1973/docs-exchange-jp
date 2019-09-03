@@ -12,4 +12,4 @@ Exchange ポータルでは、Exchange 管理者が自分の組織外の開発�
 
 どちらの Exchange ビューでもユーザがアセットを確認できるため、アセットプロバイダはフィードバックを得ることができます。
 
-詳細は、xref:exchange2-faq.adoc[「FAQ」]を参照してください。
+詳細は、​xref:exchange2-faq.adoc[「FAQ」]​を参照してください。

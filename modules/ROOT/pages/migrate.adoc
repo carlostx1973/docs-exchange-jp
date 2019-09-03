@@ -11,7 +11,7 @@ Exchange 2 への移行は、アセットタイプによって異なります。
 [%header,cols="30a,70a"]
 |===
 |アセットタイプ |移行方法
-|Example (サンプル)、Template (テンプレート) |Maven - xref:to-publish-assets-maven.adoc[「Maven を使用した Exchange アセットのパブリッシュとデプロイ」]を参照。
+|Example (サンプル)、Template (テンプレート) |Maven - ​xref:to-publish-assets-maven.adoc[「Maven を使用した Exchange アセットのパブリッシュとデプロイ」]​を参照。
 |OAS REST API |Exchange を使用してパブリッシュ。
 |RAML REST API |API Designer または Exchange を使用してパブリッシュ。
 |WSDL SOAP API |Exchange を使用してパブリッシュ。
@@ -24,7 +24,7 @@ Exchange 2 への移行は、アセットタイプによって異なります。
 
 . Anypoint Exchange 1 の非公開 Exchange のサンプルまたはテンプレートで、[Download (ダウンロード)] をクリックしてアセットをコンピュータにコピーします。
 . Anypoint Studio 6.4.1 以降を開き、[File (ファイル)] > [Import (インポート)] をクリックします。
-. [Import (インポート)] メニューで、[Anypoint Studio] > [Anypoint Studio Generated Deployable Archive (.zip) (Anypoint Studio で生成されたデプロイ可能なアーカイブ (.zip))] をクリックします。[Next (次へ)] をクリックします。zip ファイル名で、`...` 参照ボタンをクリックし、ダウンロードした zip ファイルの名前をクリックして [Open (開く)] をクリックします。
+. [Import (インポート)] メニューで、[Anypoint Studio] > [Anypoint Studio Generated Deployable Archive (.zip) (Anypoint Studio で生成されたデプロイ可能なアーカイブ (.zip))] をクリックします。[Next (次へ)] をクリックします。zip ファイル名で、​`...`​ 参照ボタンをクリックし、ダウンロードした zip ファイルの名前をクリックして [Open (開く)] をクリックします。
 . [Finish (完了)] をクリックしますランタイムバージョンで [OK] をクリックします。
 . 以前に Maven を使用したことがない場合は、Package Explorer でプロジェクト名を右クリックし、[Mule] >
 [Configure Maven (Maven を設定)] をクリックして Maven をダウンロードしたフォルダを見つけます。
@@ -38,7 +38,7 @@ Maven の準備が整ったら、Package Explorer でプロジェクト名を右
 . Anypoint Platform のユーザ名とパスワードの入力が促されます。[Signin (サインイン)] をクリックしますまたは、[Configure (設定)] をクリックし、OAuth や組織のドメインなどの外部 ID プロバイダを指定します。
 . [Publish to Exchange (Exchange にパブリッシュ)] メニューで、次の操作を実行します。
 .. [Name (名前)] 項目内にアンダースコアや括弧などの特殊文字がある場合、その文字を削除します。文字、数字、スペース、ドット、およびダッシュのみが許可されています。
-.. [Version (バージョン)] 項目内に `-SNAPSHOT` 値がある場合は、その値を削除します。
+.. [Version (バージョン)] 項目内に ​`-SNAPSHOT`​ 値がある場合は、その値を削除します。
 .. 必要に応じて、[Project Type (プロジェクトタイプ)] を [Example (サンプル)] または [Template (テンプレート)] に設定します。
 . 必要なすべての項目を設定したら、[FInish (完了)] をクリックします。[Proceed Anyway (このまま続行)] プロンプトで [Yes (はい)] をクリックします。
 . 正常にデプロイされたら、Exchange 2 でアセットを参照できるリンクが表示されます。そのリンクをクリックします。

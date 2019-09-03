@@ -5,14 +5,14 @@ endif::[]
 :keywords: Exchange, コンテンツタイプ
 
 [NOTE]
-このページでは、レガシー製品の Exchange 1 について説明します。すべてのユーザが現在のバージョンの xref:index.adoc[Exchange 2] にxref:migrate.adoc[移行]することをお勧めします。
+このページでは、レガシー製品の Exchange 1 について説明します。すべてのユーザが現在のバージョンの ​xref:index.adoc[Exchange 2]​ に​xref:migrate.adoc[移行]​することをお勧めします。
 
 Exchange 1 には、コネクタ、テンプレート、サンプル、API、その他の学習情報を含む完全なリストがあります。クラウドまたはオンプレミスで使用できます。社内のベストプラクティスのコラボレーションと共有を行うため、Anypoint Exchange の非公開テナントにアセットを追加できます。
 
 == Anypoint Exchange にアクセスする
 
-. `+https://anypoint.mulesoft.com/exchange1/+` で Exchange 1 にアクセスします。
-. Studio 内の Anypoint Studio タスクバーから、Anypoint Studio の Exchange 1 にアクセスできるようにするには、[Preferences (プリファレンス)] > [Anypoint Studio] > [Exchange] をクリックし、[Exchange Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/exchange1/+` に設定します。
+. ​`+https://anypoint.mulesoft.com/exchange1/+`​ で Exchange 1 にアクセスします。
+. Studio 内の Anypoint Studio タスクバーから、Anypoint Studio の Exchange 1 にアクセスできるようにするには、[Preferences (プリファレンス)] > [Anypoint Studio] > [Exchange] をクリックし、[Exchange Settings URL (Exchange 設定 URL)] の値を ​`+https://anypoint.mulesoft.com/exchange1/+`​ に設定します。
 . 上部タスクバーの Exchange ツールバーアイコンをクリックします。
 +
 image::ex1-exchange-studio-symbol.png[スクリーンショット - Studio タスクバーの Exchange アイコン]
@@ -31,7 +31,7 @@ Anypoint Exchange には、次のような接続と API アセットを検出し
 * Examples (サンプル) - Anypoint Studio 内の開発要素、および特定の API とインテグレーションの目的を達成するためにそれらをどのように活用できるかを説明する実装プロジェクト。たとえば、実行する準備が整っていてユースケースまたはソリューションを実証するアプリケーションなど。
 * Templates (テンプレート) - 一般的なユースケースに対応し、ベストプラクティスに基づいて構築されパッケージ化されたインテグレーションパターン。情報を追加してユーザのケースまたはソリューションを完了する、ユースケースアプリケーション。
 * Connectors (コネクタ) - サードパーティの API と標準のインテグレーションプロトコルを使用して MuleSoft の Anypoint Platform で開発およびデプロイされた、エンドポイントに対するパッケージ化された接続。Anypoint Studio には多数のコネクタが事前に読み込まれますが、Exchange にはコネクタの完全なリストがあります。リソース間の接続を提供するアプリケーションに関する詳細が表示されます。コネクタをインストールするには、Anypoint Studio 内から Exchange を開きます。
-* REST API - RAML API 記述 (`+raml.org+` を参照)。OAS REST API がある場合は、Exchange 2 を使用してインストールします。
+* REST API - RAML API 記述 (​`+raml.org+`​ を参照)。OAS REST API がある場合は、Exchange 2 を使用してインストールします。
 * SOAP API - Anypoint Platform をよりすばやく簡単に採用するために役立つ WSDL の API 記述。
 * Others (その他) - ブログ、記事、動画など。DataWeave の情報、MEL、バッチ処理、MUnit、ポリシー、ナレッジ共有情報ソースへのリンクなど、ナレッジ共有に役立つリンク。
 
@@ -144,7 +144,7 @@ Anypoint Studio では、Exchange 内の項目に移動して、アセットを�
 Exchange から Studio にコネクタをインストールする手順は、次のとおりです。
 
 . Anypoint Studio で Exchange 1 へのアクセスを有効にするため、Preferences (プリファレンス) > [Anypoint Studio] > [Exchange] をクリックし、[Exchange
-Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/exchange1/+` に設定します。
+Settings URL (Exchange 設定 URL)] の値を ​`+https://anypoint.mulesoft.com/exchange1/+`​ に設定します。
 . 必要なコネクタを検索します。[View Details (詳細を表示)] をクリックし、プロジェクトを構築する Mule Runtime とコネクタは互換性があることを確認します。コネクタに互換性がある場合、[Install (インストール)] をクリックします。
 . 契約条件に同意してウィザードの指示に従い、Studio を再起動します。
 . コネクタを検索し、Studio キャンバスにドラッグします。
@@ -152,10 +152,10 @@ Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/ex
 == Exchange でのサンプルの実装
 
 . Anypoint Studio で Exchange 1 へのアクセスを有効にするため、Preferences (プリファレンス) > [Anypoint Studio] > [Exchange] をクリックし、[Exchange
-Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/exchange1/+` に設定します。
+Settings URL (Exchange 設定 URL)] の値を ​`+https://anypoint.mulesoft.com/exchange1/+`​ に設定します。
 . ニーズに最適なサンプルを見つけて、[View details (詳細を表示)] をクリックします。
 . [Open in Studio (Studio で開く)] をクリックし、新規プロジェクトとして Studio にインポートします。
-. Package Explorer でプロジェクトが使用可能になります。それに含まれるファイルを調べます。`src/main/app` を確認し、このサンプルの XML ファイルを見つけます。
+. Package Explorer でプロジェクトが使用可能になります。それに含まれるファイルを調べます。​`src/main/app`​ を確認し、このサンプルの XML ファイルを見つけます。
 . プロジェクト内にユーザログイン情報を必要とするコネクタがある場合は、コネクタのプロパティエディタを開き、項目に入力します。
 . サンプルはこれで完成です。デプロイしてその結果を参照したり、デバッグモードで実行して各ステップで Mule メッセージがどうなるかを調べたり、必要に応じて修正したりできます。
 
@@ -164,16 +164,16 @@ Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/ex
 Exchange でテンプレートを実装するための基本的な手順は、次のとおりです。
 
 . Anypoint Studio で Exchange 1 へのアクセスを有効にするため、Preferences (プリファレンス) > [Anypoint Studio] > [Exchange] をクリックし、[Exchange
-Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/exchange1/+` に設定します。
+Settings URL (Exchange 設定 URL)] の値を ​`+https://anypoint.mulesoft.com/exchange1/+`​ に設定します。
 . ニーズに最適なテンプレートを見つけて、[Open in Studio (Studio で開く)] をクリックします。
 . Package Explorer でこのプロジェクトが使用可能になります。それに含まれるファイルを調べます。プロジェクトを最初に開いたときにエラーのマークが表示される可能性がありますが、これは使用されているコネクタが機能するにはユーザログイン情報が設定されている必要があることを示しているだけです。
-. `dev` 以外の環境にアプリケーションをデプロイする場合は、プロジェクトフォルダのルートレベルにある `mule-project.xml` ファイルを開き、`mule.env` パラメータの値を変更します。
+. ​`dev`​ 以外の環境にアプリケーションをデプロイする場合は、プロジェクトフォルダのルートレベルにある ​`mule-project.xml`​ ファイルを開き、​`mule.env`​ パラメータの値を変更します。
 +
 image::ex1-mule-env.png[Mule プロジェクトの概要のスクリーンショット]
 +
-. Exchange のすべてのテンプレートはすでに組み込まれているため、機能させるために必要な作業は設定ファイルにログイン情報を含めることのみです。プロジェクトのフロー内のすべてのコネクタとグローバル要素はこれらの設定ファイルの項目を参照するため、テンプレートのしくみを拡張またはカスタマイズする予定がない限り、これらのファイル以外のものを変更したり調べたりする必要はありません。これらのファイルは `src/main/resources` フォルダ内にあります。前のステップでデプロイ用に選択した環境に対応するファイルを見つけて、それを開きます。
+. Exchange のすべてのテンプレートはすでに組み込まれているため、機能させるために必要な作業は設定ファイルにログイン情報を含めることのみです。プロジェクトのフロー内のすべてのコネクタとグローバル要素はこれらの設定ファイルの項目を参照するため、テンプレートのしくみを拡張またはカスタマイズする予定がない限り、これらのファイル以外のものを変更したり調べたりする必要はありません。これらのファイルは ​`src/main/resources`​ フォルダ内にあります。前のステップでデプロイ用に選択した環境に対応するファイルを見つけて、それを開きます。
 . 設定ファイルで必須の各項目の値を指定します。これには、ユーザログイン情報、ポート番号、コールバック URL などがあります。
-. アプリケーションをテストするには、緑の <b>[`Run`</b> (実行)] ボタンの横にあるドロップダウンメニューをクリックしてリストからプロジェクトを選択し、プロジェクトを保存して Anypoint Studio の埋め込みランタイムにデプロイします。
+. アプリケーションをテストするには、緑の ​<b>[​`Run`​</b>​ (実行)] ボタンの横にあるドロップダウンメニューをクリックしてリストからプロジェクトを選択し、プロジェクトを保存して Anypoint Studio の埋め込みランタイムにデプロイします。
 +
 これでアプリケーションをデプロイする準備ができました。
 
@@ -310,11 +310,11 @@ DevKit を使用して独自のカスタムコネクタを作成した場合は�
 === Anypoint Studio でのコネクタのインストール
 
 . Anypoint Studio で Exchange 1 へのアクセスを有効にするため、Preferences (プリファレンス) > [Anypoint Studio] > [Exchange] をクリックし、[Exchange
-Settings URL (Exchange 設定 URL)] の値を `+https://anypoint.mulesoft.com/exchange1/+` に設定します。
+Settings URL (Exchange 設定 URL)] の値を ​`+https://anypoint.mulesoft.com/exchange1/+`​ に設定します。
 . Anypoint Studio の [Help (ヘルプ)] メニューで、[Install New Software (新しいソフトウェアをインストール)] をクリックします。
 . [Work with (使用:)] 項目の横にある [Add (追加)] をクリックし、次の値を入力します。
 .. Name (名前): パレットにコネクタを表示するための名前。
-.. Location (場所): コネクタの update-site.zip ファイル (`target` フォルダ内) のファイルパスの先頭に `file:/` を追加。
+.. Location (場所): コネクタの update-site.zip ファイル (​`target`​ フォルダ内) のファイルパスの先頭に ​`file:/`​ を追加。
 . 検索条件項目の下のチェックボックス (下の画像を参照) で、コネクタを選択します。フォルダをクリックして展開し、個々の項目を選択して [Next (次へ)] をクリックします。
 . 選択した項目の詳細を確認してから、[Next (次へ)] をクリックします。
 . クリックして商品の契約条件に同意し、[Finish (完了)] をクリックします。
@@ -349,7 +349,7 @@ Anypoint Exchange 1.7.0 以降では、コネクタを Anypoint Studio で作成
 . Maven および Anypoint Connector DevKit Plugin をダウンロードしてインストールします。詳細は、「Anypoint Connector DevKit」を参照してください。
 . 新しい Anypoint コネクタプロジェクトを作成します。必要に応じて、プロジェクトに追加します。
 . Studio を使用して、コネクタを zip ファイルとしてエクスポートします。Package Explorer でプロジェクト名を右クリックし、[Export (エクスポート)] > [Mule] > [Anypoint Connector Update Site (Anypoint コネクタ更新サイト)]、[Next (次へ)] の順にクリックして zip ファイルを保存するパスを指定し、[Finish (完了)] をクリックします。
-. zip ファイルを開きます。テキストエディタで `content.xml` ファイルを開き、`id=` 値に続いて `version=` 値を検索します。次の例では、最後の行に id が `org.mule.tooling.ui.extension.my-connector.3.5.0.feature.group`、version が `version='1.0.0.201607271521'` と示されています。この ID 文字列は、この後に参照する機能 ID です。機能 ID は常に `org.mule.tooling.ui.extension.{anything}.feature.group` のようになります。
+. zip ファイルを開きます。テキストエディタで ​`content.xml`​ ファイルを開き、​`id=`​ 値に続いて ​`version=`​ 値を検索します。次の例では、最後の行に id が ​`org.mule.tooling.ui.extension.my-connector.3.5.0.feature.group`​、version が ​`version='1.0.0.201607271521'`​ と示されています。この ID 文字列は、この後に参照する機能 ID です。機能 ID は常に ​`org.mule.tooling.ui.extension.{anything}.feature.group`​ のようになります。
 +
 [source,text,linenums]
 ----
@@ -367,15 +367,15 @@ Anypoint Exchange 1.7.0 以降では、コネクタを Anypoint Studio で作成
 ----
 +
 . Anypoint Exchange で、[Add item (項目を追加)] > [Connector (コネクタ)] をクリックします。コネクタに関する情報を入力します。下にスクロールして [Add version (バージョンを追加)] をクリックします。
-. [Versions (バージョン)] メニューで、[Connector Version (コネクタバージョン)] 項目にバージョン文字列 (前の例では `1.0.0.201607271521`)、[Feature ID (機能 ID)] 項目に機能 ID 文字列 (前の例では `org.mule.tooling.ui.extension.my-connector.3.5.0.feature.group`) を入力します。この例では、完了した項目は次のようになります。
+. [Versions (バージョン)] メニューで、[Connector Version (コネクタバージョン)] 項目にバージョン文字列 (前の例では ​`1.0.0.201607271521`​)、[Feature ID (機能 ID)] 項目に機能 ID 文字列 (前の例では ​`org.mule.tooling.ui.extension.my-connector.3.5.0.feature.group`​) を入力します。この例では、完了した項目は次のようになります。
 +
-** Connector Version (コネクタバージョン): `1.0.0.201607271521`
-** Runtime Version (ランタイムバージョン): `3.8`
-** Notes (メモ): `Dept Status`
+** Connector Version (コネクタバージョン): ​`1.0.0.201607271521`​
+** Runtime Version (ランタイムバージョン): ​`3.8`​
+** Notes (メモ): ​`Dept Status`​
 ** [Install (インストール)] ラジオボタンがオン
-** Update Site URL (更新サイト URL): `+http://department-status-connector.example.com+`
-** Feature ID (機能 ID): `1.0.0.201607271521`
-** Documentation URL (ドキュメント URL): `+http://department-status-connector.example.com/getting-started+`
+** Update Site URL (更新サイト URL): ​`+http://department-status-connector.example.com+`​
+** Feature ID (機能 ID): ​`1.0.0.201607271521`​
+** Documentation URL (ドキュメント URL): ​`+http://department-status-connector.example.com/getting-started+`​
 +
 . コネクタの zip ファイルを含むリポジトリへのリンクを指定します。注意: コネクタを提供するリポジトリは、アクセスするための基本認証をサポートしている必要があります。MuleSoft は Sonatype Nexus リポジトリを使用してこの機能をテストしていますが、基本認証をサポートする他のリポジトリも使用できる可能性があります。
 . 必要に応じて、コネクタのドキュメントへのリンクを指定します。
@@ -442,15 +442,15 @@ Exchange の [Show content from (コンテンツの表示元)] には、この�
 
 2016 年 5 月以降の Anypoint Exchange では、コンテンツを検索するための新しい検索条件がサポートされています。
 
-* [`Show content from` (コンテンツの表示元)] 検索条件
-* [`Scope` (スコープ)] 検索条件 - ナビゲーションバーで選択されている組織内でのユーザのロールによって異なる。
+* [​`Show content from`​ (コンテンツの表示元)] 検索条件
+* [​`Scope`​ (スコープ)] 検索条件 - ナビゲーションバーで選択されている組織内でのユーザのロールによって異なる。
 
 デフォルトでリストに表示されるコンテンツは、ナビゲーションバーで選択されている組織またはビジネスグループによって異なります。
 
 == 関連情報
 
-* xref:release-notes::exchange/exchange-on-prem-release-notes.adoc[Anypoint Exchange Private Cloud Edition リリースノート]。
-* xref:exchange1-faq.adoc[Exchange1 FAQ]。
+* ​xref:release-notes::exchange/exchange-on-prem-release-notes.adoc[Anypoint Exchange Private Cloud Edition リリースノート]​。
+* ​xref:exchange1-faq.adoc[Exchange1 FAQ]​。
 * https://www.mulesoft.com/resources/esb/top-five-data-integration-patterns[インテグレーションパターン]。
-* アプリケーションのさまざまなxref:runtime-manager::deployment-strategies.adoc[デプロイ]方法について学習する。
-* Salesforce を中心としたテンプレート関する http://blogs.mulesoft.com/dev/mule-dev/anypoint-templates-database-intro/[ブログ投稿]と http://blogs.mulesoft.com/dev/mule-dev/connected-company-part-1-salesforce-integration-templates/[別の投稿]を読む。
+* アプリケーションのさまざまな​xref:runtime-manager::deployment-strategies.adoc[デプロイ]​方法について学習する。
+* Salesforce を中心としたテンプレート関する&#8203;http://blogs.mulesoft.com/dev/mule-dev/anypoint-templates-database-intro/[ブログ投稿]と&#8203;http://blogs.mulesoft.com/dev/mule-dev/connected-company-part-1-salesforce-integration-templates/[別の投稿]を読む。

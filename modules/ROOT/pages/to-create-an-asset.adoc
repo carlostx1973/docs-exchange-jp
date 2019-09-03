@@ -9,12 +9,15 @@ Anypoint Exchange の非公開 Exchange および Exchange ポータルで、API
 
 アセットの作成方法は、そのタイプによって異なります。
 
-* OAS 2.0、RAML、RAML フラグメント、HTTP、WSDL、カスタムアセットの場合、Exchange の *[New asset (新規アセット)]* メニューを使用してアセットを直接作成する。
+* OAS 2.0、RAML、RAML フラグメント、HTTP、WSDL、カスタムアセットの場合、Exchange の ​*[New asset (新規アセット)]*​ メニューを使用してアセットを直接作成する。
 * サンプルまたはテンプレートの場合、Anypoint Studio の Maven 化機能を使用して各アセットを作成し、それぞれを Exchange にパブリッシュする。
-* コネクタについては、xref:to-publish-assets-maven.adoc[「Maven を使用した Exchange アセットのパブリッシュとデプロイ」]を参照。
+* コネクタについては、​xref:to-publish-assets-maven.adoc[「Maven を使用した Exchange アセットのパブリッシュとデプロイ」]​を参照。
 * Design Center を使用して API を Exchange にパブリッシュすることで、RAML、OAS および RAML フラグメントをパブリッシュすることも可能。
 +
-これらのアセットタイプをパブリッシュする別の方法は、 https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用することです。
+これらのアセットタイプをパブリッシュする別の方法は、&#8203;https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/exchange-experience-api/[Exchange Experience API] を使用することです。
+* RAML および OAS API 仕様は、​xref:runtime-manager::anypoint-platform-cli.adoc[Anypoint Platform コマンドラインインターフェース (CLI)]​ を使用して Exchange にアップロードできます。
++
+例: ​`exchange asset upload --classifier raml --apiVersion v1 --name HelloWorld --mainFile helloworld.raml helloword/1.0.0 /Users/nmouso/Downloads/helloworld.raml.zip`​
 
 Exchange の各アセットはバージョン管理されています。非表示にするバージョンを非推奨にすることで、表示されるバージョンを管理できます。必要に応じて、バージョンを削除できます。
 
@@ -28,7 +31,7 @@ image::ex2-exchange-assets.png[図 - Exchange でのアセットの表示方法]
 
 API アセットは、その関数、説明、戻りコードの処理方法、連動関係など、インターフェースの構成要素を示します。
 
-. Exchange で、*[New asset (新規アセット)]* をクリックします。
+. Exchange で、​*[New asset (新規アセット)]*​ をクリックします。
 . アセットの名前を指定します。
 . ドロップダウンリストから、アセットタイプをクリックします。
 +
@@ -56,12 +59,12 @@ Exchange は GroupId、AssetId、およびバージョンを自動的に生成�
 
 カスタムアセットでは、お知らせ、ドキュメント、動画、ファイルの共有など、組織のあらゆる側面に関する情報を共有できます。ユーザがダウンロードできる省略可能なファイルをカスタムアセットに追加できます。ファイルは Exchange に保存されます。
 
-*注意:* Exchange では、カスタムアセットの省略可能なファイルとして次のファイルの種類のみを使用できます。
+​*注意:*​ Exchange では、カスタムアセットの省略可能なファイルとして次のファイルの種類のみを使用できます。
 
-画像: `.jpg, .jpeg, .png, .gif, .svg` +
-ドキュメント: `.doc, .docx, .pdf, .ppt, .pptx, .rtf, .vsd, .vsdx, .vss, .vsdx` +
-圧縮ファイル: `.zip, .tgz, .jar, .gz, .7z` +
-テキストファイル: `.txt, .json, .raml, .yaml, .yml, .md, .csv, .xml, .xsd, .wsdl, .html, .pom, .log, .sql`
+画像: ​`.jpg, .jpeg, .png, .gif, .svg`​ +
+ドキュメント: ​`.docx, .pdf, .pptx, .rtf, .vsdx, .vssx`​ +
+圧縮ファイル: ​`.zip, .tgz, .jar, .gz, .7z`​ +
+テキストファイル: ​`.txt, .json, .raml, .yaml, .yml, .md, .csv, .xml, .xsd, .wsdl, .html, .pom, .log, .sql`​
 
 ファイルの種類がないファイルは使用できません。すべてのファイルの種類は大文字と小文字を区別しません。
 
@@ -69,7 +72,7 @@ MuleSoft では、許可されなくなった種類のファイルを含むす�
 
 カスタムアセットを作成する手順は、次のとおりです。
 
-. *[New asset (新規アセット)]* をクリックします。
+. ​*[New asset (新規アセット)]*​ をクリックします。
 . アセットの名前を指定します。
 . [Custom Asset Type (カスタムアセットタイプ)] をクリックします。
 . ファイルをユーザと共有する場合、[Choose File (ファイルの選択)] をクリックしてファイルを見つけます。
@@ -85,6 +88,6 @@ MuleSoft では、許可されなくなった種類のファイルを含むす�
 
 == 関連情報
 
-* 次へ: xref:to-describe-an-asset.adoc[アセットの説明].
-* xref:design-center::upload-raml-task.adoc[API Designer で RAML ファイルを作成して Exchange にインポート]。
-* xref:to-publish-assets-maven.adoc[Maven を使用した Exchange アセットのパブリッシュとデプロイ]。
+* 次へ: ​xref:to-describe-an-asset.adoc[アセットの説明]​.
+* ​xref:design-center::upload-raml-task.adoc[API Designer で RAML ファイルを作成して Exchange にインポート]​。
+* ​xref:to-publish-assets-maven.adoc[Maven を使用した Exchange アセットのパブリッシュとデプロイ]​。

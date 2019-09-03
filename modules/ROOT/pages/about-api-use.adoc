@@ -14,4 +14,4 @@ Exchange は、API コンシューマが次を使用して API 機能を理解�
 
 == 関連情報
 
-* xref:to-describe-an-asset.adoc[アセットの説明] - Exchange で直接 REST API 機能を表示して試す方法を説明します。
+* ​xref:to-describe-an-asset.adoc[アセットの説明]​ - Exchange で直接 REST API 機能を表示して試す方法を説明します。

@@ -19,7 +19,7 @@ image::ex2-delete-asset.png[[Delete Asset (アセットを削除)] メニュー]
 +
 image::ex2-delete-version.png[アセットのバージョンの削除]
 +
-RAML バージョンを変更する場合は、xref:to-change-raml-version.adoc[「RAML バージョンの変更」]を参照してください。
+RAML バージョンを変更する場合は、​xref:to-change-raml-version.adoc[「RAML バージョンの変更」]​を参照してください。
 +
 . 確認メッセージが表示されたらアクションを確認するか、[Cancel (キャンセル)] をクリックしてメッセージを閉じます。
 

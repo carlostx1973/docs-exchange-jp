@@ -6,17 +6,19 @@ endif::[]
 
 Exchange では、OAS または RAML REST API をテストするためのシミュレーションデータを提供できます。シミュレーションデータは、モッキングサービス機能で提供されます。
 
-データアクセスのシミュレーション (モッキングサービス) は、Exchange で次の場所に表示されます。
+モッキングサービスは Exchange に表示されます。
 
 * アセット詳細画面の右側に表示される API Console 内。モッキングサービスでは、シミュレーションデータを API 関数に追加し、そのデータを使用して API をテストできます。
 +
 image::ex2-api-console.png[API Console 内のモッキング]
 +
-* API の各バージョンのインスタンスとして。
+このページには 2 つの URL が表示されます。左の URL は Design Center でも使用され、公開されています。右の URL は Exchange のみで使用され、認証が必要です。
++
+* API の各バージョンのインスタンスとしてリストされる。
 +
 image::ex2-mock-in-versions.png[バージョン内のモッキングインスタンス]
 +
-* モッキングサービス URL がリストされる [API Instances (API インスタンス)]。
+* モッキングサービス URL がリストされる ​*[API instances (API インスタンス)]*​ ページにリストされる。
 +
 image::ex2-api-instances.png[[API Instances (API インスタンス)] のモッキングサービス URL]
 
@@ -37,5 +39,5 @@ Exchange によってデータが送信され、応答がリストされます�
 
 == 関連情報
 
-* xref:to-change-raml-version.adoc[REST API バージョンの変更]
-* xref:design-center::design-mocking-service.adoc[API へのコールのシミュレーション]
+* ​xref:to-change-raml-version.adoc[REST API バージョンの変更]​
+* ​xref:design-center::design-mocking-service.adoc[API へのコールのシミュレーション]​

@@ -8,7 +8,7 @@ Anypoint Studio で RAML を開く手順は、次のとおりです。
 
 . https://www.anypoint.mulesoft.com/exchange/?type=rest-api[Anypoint Exchange] で、REST API (RAML) のカードをクリックします。
 . Exchange の詳細で、[Download (ダウンロード)] をクリックします。これにより、RAML が zip ファイルとしてコンピュータにコピーされます。
-. Anypoint Studio で、[File (ファイル)] > [New (新規)] > [Mule Project (Mule プロジェクト)] をクリックし、[New Mule Project (新規 Mule プロジェクト)] ダイアログで *[APIkit Settings (APIkit 設定)]* > [Add APIkit Components (APIkit コンポーネントを追加)] をクリックしてコンピュータの RAML zip ファイルを見つけます。Anypoint Platform API Manager または Design Center から RAML をダウンロードすることもできます。
+. Anypoint Studio で、[File (ファイル)] > [New (新規)] > [Mule Project (Mule プロジェクト)] をクリックし、[New Mule Project (新規 Mule プロジェクト)] ダイアログで ​*[APIkit Settings (APIkit 設定)]*​ > [Add APIkit Components (APIkit コンポーネントを追加)] をクリックしてコンピュータの RAML zip ファイルを見つけます。Anypoint Platform API Manager または Design Center から RAML をダウンロードすることもできます。
 
 RAML は新しい Mule プロジェクトをインポートして入力します。
 

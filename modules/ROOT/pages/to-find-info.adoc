@@ -7,7 +7,7 @@ endif::[]
 Exchange はアセットを見つけるのに役立ちます。アセットを検索したり、[All Types (すべてのタイプ)] をクリックして特定のアセット
 を絞り込んだり、[All Types (すべてのタイプ)] 検索条件で検索テキストを組み合わせたりすることができます。
 
-<<index.adoc#content-types,[Content Type (コンテンツタイプ)]>> には、さまざまなタイプのアセットがリストされます。
+​<<index.adoc#content-types​,​[Content Type (コンテンツタイプ)]>>​ には、さまざまなタイプのアセットがリストされます。
 
 == アセットの詳細
 
@@ -19,12 +19,20 @@ Exchange はアセットを見つけるのに役立ちます。アセットを�
 
 == Exchange の検索
 
-検索を使用して、アセットタイトル、アセット ID、またはアセットのタグ内に 1 つ以上の用語が含まれる Exchange アセットを見つけることができます。[All Types (すべてのタイプ)] にリストされる検索条件を使用して、検索語を組み合わせることもできます。
-検索は表示している Exchange にのみ適用されます。
-非公開 Exchange で検索した場合、検索には非公開 Exchange アセットのみが
-リストされ、公開 Exchange アセットはリストされません。
+Exchange の検索の検索対象は次のとおりです。
+
+* 各アセットの名前
+* タグ
+* カテゴリ
+* カスタム属性 (カスタム項目とも呼ばれる)
+* アセットポータルページのコンテンツ
+* xref:to-find-info.adoc#searching-api-specifications[RAML および OAS API 仕様で定義されているプロパティ]
+
+[All Types (すべてのタイプ)] にリストされる検索条件を使用して、検索語を組み合わせることができます。
 
 [Category (カテゴリ)] または [Tag (タグ)] 要素をクリックして検索することもできます。これにより、類似するアセットを見つけるために使用できる絞り込まれた検索が作成されます。
+
+検索は表示している Exchange 組織にのみ適用されます。非公開 Exchange 組織で検索した場合、検索にはその組織のアセットのみがリストされ、Mulesoft の公開アセットはリストされません。
 
 == 検索を保存する
 
@@ -43,7 +51,7 @@ image::ex2-biz-groups.png[スクリーンショット - 上部のタスクバー
 
 追加グループが表示されない場合は、Exchange 管理者にお問い合わせください。 
 
-グループにアセットが見つからない場合は、別のビジネスグループに属している可能性があります。別のビジネスグループのアセットを検索するには、*[All assets (すべてのアセット)]* をクリックします。左側のナビゲーション領域には、検索用の追加領域があります。[Provided by MuleSoft (MuleSoft による提供)] スコープには、MuleSoft によって提供されたアセットがリストされます。[All assets (すべてのアセット)] スコープには、MuleSoft および独自のマスタ組織によって提供されたアセットがリストされます。[Business group (ビジネスグループ)] スコープには、ビジネスグループ内のユーザによって作成されたアセットがリストされます。
+グループにアセットが見つからない場合は、別のビジネスグループに属している可能性があります。別のビジネスグループのアセットを検索するには、​*[All assets (すべてのアセット)]*​ をクリックします。左側のナビゲーション領域には、検索用の追加領域があります。[Provided by MuleSoft (MuleSoft による提供)] スコープには、MuleSoft によって提供されたアセットがリストされます。[All assets (すべてのアセット)] スコープには、MuleSoft および独自のマスタ組織によって提供されたアセットがリストされます。[Business group (ビジネスグループ)] スコープには、ビジネスグループ内のユーザによって作成されたアセットがリストされます。
 
 == アセットの REST API 要素を表示する
 
@@ -64,23 +72,20 @@ image::ex2-rest-ftns.png[スクリーンショット - 左側のナビゲーシ�
 
 単語の間にスペースを挿入し、指定した各単語で始まる
 大文字と小文字を区別しないテキストを検索できます。
-これは、各単語の後に `*` ワイルドカード正規表現を追加する場合と似ています。
-たとえば、`mq module` を検索すると、`mq` または `module` で始まるテキストが含まれる
+これは、各単語の後に ​`*`​ ワイルドカード正規表現を追加する場合と似ています。
+たとえば、​`mq module`​ を検索すると、​`mq`​ または ​`module`​ で始まるテキストが含まれる
 アセットが検索されます。
 
-検索に一致するには、複数語の語句内の各単語がアセット名、アセットID、または
-タグ内に存在する必要があります。
+複数語の語句を検索すると、語句内のすべての単語を含むアセットが表示されます。
 
 検索語をスペース以外の文字で区切ると、検索前に Exchange によってその文字が
 スペースに変換されます。
 
 === 区切り文字の検索
 
-検索を使用して、アセット名、アセット ID、またはタグ内に 1 つ以上の用語が含まれる Exchange アセットを見つけることができます。
+検索を使用して、1 つ以上の用語が含まれる Exchange アセットを見つけることができます。
 
-英数字以外の記号で連結された検索語を入力すると、その用語の検索前に Exchange によって記号がスペースに置き換えられます。検索文字列は、両方の単語が結果に含まれている場合にのみ一致します。これは、`word1 AND word2` のリレーションと同じです。
-
-Exchange は、アセット名、アセット ID 値、およびタグ値を検索します。Exchange 1 から移行されたアセットは、検索にアセットの説明内のテキストを含めることもできます。
+英数字以外の記号で連結された検索語を入力すると、その用語の検索前に Exchange によって記号がスペースに置き換えられます。検索文字列は、両方の単語が結果に含まれている場合にのみ一致します。これは、​`word1 AND word2`​ のリレーションと同じです。
 
 検索語の例:
 
@@ -106,10 +111,10 @@ connect:/sales
 |Cisco Sales API  |cisco-sales-api |Connecting, Productive |はい。
 |Cisco Connector |cisco-connector |com.cisco.connector.sales
 |はい。タグが個別の用語に分割されているため。
-|Salesforce API |salesforce-api |muleconnector, MuleConnector |いいえ。`connect` が見つかりませんでした。
-|Salesforce Connec |salesforce-connec |REST |いいえ。`connect` が見つかりませんでした。
-|Validations API |validations-api |コネクタ |いいえ。`sales` が見つかりませんでした。
-|Cisco Presales API |cisco-presales-api |Connector, api |いいえ。`sales` が見つかりませんでした。
+|Salesforce API |salesforce-api |muleconnector, MuleConnector |いいえ。​`connect`​ が見つかりませんでした。
+|Salesforce Connec |salesforce-connec |REST |いいえ。​`connect`​ が見つかりませんでした。
+|Validations API |validations-api |コネクタ |いいえ。​`sales`​ が見つかりませんでした。
+|Cisco Presales API |cisco-presales-api |Connector, api |いいえ。​`sales`​ が見つかりませんでした。
 |===
 
 === 語句検索の区切り文字
@@ -136,12 +141,12 @@ Api-"Sales/connect"
 [%header%autowidth.spread]
 |===
 |アセット名 |アセット ID |タグ |一致?
-|Salesforce API |salesforce-api |mule-Connector |いいえ。`sales connect` が見つかりませんでした。
+|Salesforce API |salesforce-api |mule-Connector |いいえ。​`sales connect`​ が見つかりませんでした。
 |Salesforce Connector |salesforce-connector |REST |いいえ。
 |Sales Connect Asset |validations-api |mule-connector |はい。
-|Sales Connect Images |validations-images |mule-connector |いいえ。`api` が見つかりませんでした。
-|Optimized API |optimized-api |resource:/connect, sales:enabled |いいえ。`sales connect` が見つかりませんでした。
-|Optimized API |optimized-api |resource:/sales, connect:enabled |いいえ。各用語は異なるタグ内にあるため、`sales connect` が見つかりませんでした。
+|Sales Connect Images |validations-images |mule-connector |いいえ。​`api`​ が見つかりませんでした。
+|Optimized API |optimized-api |resource:/connect, sales:enabled |いいえ。​`sales connect`​ が見つかりませんでした。
+|Optimized API |optimized-api |resource:/sales, connect:enabled |いいえ。各用語は異なるタグ内にあるため、​`sales connect`​ が見つかりませんでした。
 |Optimized API |optimized-api |sales:/connect |はい。
 |===
 
@@ -151,11 +156,13 @@ Api-"Sales/connect"
 
 === タグで検索
 
-`tag:"some value"` または `tag:value` 構造を使用してタグで検索できます。
-タグ内にスペースが含まれない場合、二重引用符は不要です。
-また、タグ検索では大文字と小文字が区別されません。
+​`tag:"some value"`​ または ​`tag:value`​ 構造を使用して、タグで検索できます。
 
-次の表に、検索されたアセットと一致する例と一致しない例を示します。
+タグ内にスペースが含まれない場合、二重引用符は不要です。
+
+タグ検索では大文字と小文字が区別されません。
+
+例:
 
 [%header%autowidth.spread]
 |===
@@ -171,12 +178,15 @@ Api-"Sales/connect"
 
 === カテゴリで検索
 
-`category:"some key" = "some value"` 構造を使用して、カテゴリで検索できます。
-カテゴリのキーまたは値にスペースが含まれない場合、二重引用符は不要です。
-キーにアスタリスク (`*`) 正規表現を含めて、カテゴリ名内の文字を検索できます。
-また、キーと値では大文字と小文字が区別されますが、小文字の値を検索した場合はいずれにしても一致します。
+​`category:"some key" = "some value"`​ 構造を使用して、カテゴリで検索できます。
 
-次の表に、検索されたアセットと一致する例と一致しない例を示します。
+カテゴリのキーまたは値にスペースが含まれない場合、二重引用符は不要です。
+
+キーにアスタリスク (​`*`​) 正規表現を含めて、カテゴリ名内の文字を検索できます。
+
+キーと値では大文字と小文字が区別されますが、小文字の値を検索すると一致します。
+
+例:
 
 [%header%autowidth.spread]
 |===
@@ -190,24 +200,30 @@ Api-"Sales/connect"
 |category:this.*= value |this.is.my.key:value |はい。
 |category:*my.key = value |this.is.my.key:value |はい。
 |category:this.*= value |this.is.my.key:some-value |いいえ。
-|category:this.* = some-* |this.is.my.key:some-value |いいえ。
+|category:this.​* = some-*​ |this.is.my.key:some-value |いいえ。
 |===
 
-異なるカテゴリの組み合わせを検索できますが、同じカテゴリの複数の値は検索できません。複数の検索語には暗黙的な AND を使用します。OR はサポートされていません。
+異なるカテゴリの組み合わせを検索できますが、同じカテゴリの複数の値は検索できません。
+
+複数の検索語には暗黙的な AND を使用します。OR はサポートされていません。
 
 次の検索語は、System API と Salesforce 製品の両方としてマークされたすべてのアセットを返します。
 
-`category:"API Type" = "System API" category:"Product" = "Salesforce"`
+​`category:"API Type" = "System API" category:"Product" = "Salesforce"`​
 
 === カスタム項目で検索
 
-「カテゴリで検索」と似ていますが、クエリ言語で `category` の代わりに `field` を検索します。
-`field:"some key" = "some value"` 構造を使用して、カスタム項目で検索できます。
-カスタム項目のキーまたは値にスペースが含まれない場合、二重引用符は不要です。
-キーにアスタリスク (`*`) 正規表現を含めて、項目名内の文字を検索できます。
-また、キーと値では大文字と小文字が区別されますが、小文字の値を検索した場合はいずれにしても一致します。
+「カテゴリで検索」と似ていますが、クエリ言語で ​`category`​ の代わりに ​`field`​ を検索します。
 
-次の表に、検索されたアセットと一致する例と一致しない例を示します。
+​`field:"some key" = "some value"`​ 構造を使用して、カテゴリで検索できます。
+
+カスタム項目のキーまたは値にスペースが含まれない場合、二重引用符は不要です。
+
+キーにアスタリスク (​`*`​) 正規表現を含めて、項目名内の文字を検索できます。
+
+キーと値では大文字と小文字が区別されますが、小文字の値を検索すると一致します。
+
+例:
 
 [%header%autowidth.spread]
 |===
@@ -224,8 +240,98 @@ Api-"Sales/connect"
 |field:this.*= value |this.is.my.key:value |はい。
 |field:*my.key = value |this.is.my.key:value |はい。
 |field:this.*= value |this.is.my.key:some-value |いいえ。
-|field:this.* = some-* |this.is.my.key:some-value |いいえ。
+|field:this.​* = some-*​ |this.is.my.key:some-value |いいえ。
 |===
+
+== API 仕様の検索
+
+Exchange では、次の API 仕様のプロパティが検索されます。
+
+* API タイトル
+* ベース URI
+* エンドポイント
+** パス
+** 表示名
+** 説明
+メソッド
+** メソッドのタイプ (GET、POST など)
+** 説明
+* クエリパラメータ
+** 名前
+** 説明
+* URI パラメータ
+** 名前
+* 型
+** 名前
+** プロパティ
+
+これらのプロパティ名は RAML 仕様に基づきます。OAS 仕様では、同等のプロパティにインデックスが付けられています。たとえば、RAML にはベース URI がありますが、OAS にはホストとパスがあります。
+
+API 仕様の検索の例:
+
+[source,text,linenums]
+----
+#%RAML 1.0
+---
+title: Leagues API
+version: v1
+baseUri: https://leagues.com/api/
+
+types:
+ Team:
+   properties:
+     name: string
+     city: string
+
+/leagues/{leagueId}:
+ displayName: League resource
+ description: Contains all the information about a league
+ uriParameters:
+   leagueId:
+     displayName: League ID
+     description: The ID of the league to retrieve information from
+ /teams:
+   get:
+     displayName: Teams directory
+     description: Get list of all teams in the league
+     queryParameters:
+       offset:
+         displayName: Offset
+         description: Offset for the result set
+     responses:
+       200:
+         body:
+           application/json:
+               type: Team[]
+   post:
+     displayName: Create team
+     description: Creates a new team in the league
+     responses:
+       201:
+         description: New team has been created
+----
+
+この API は、次の検索で見つかります。
+
+[%header%autowidth.spread]
+|===
+|検索語 |一致
+|league API |API タイトル
+|leagues.com |API ベース URI
+|​`/leagues`​ |エンドポイントパス
+|League resource |エンドポイントの表示名
+|Information about a league |エンドポイントの説明
+|POST |エンドポイントのメソッド
+|create team |エンドポイントのメソッドの説明
+|offset |クエリパラメータ名、クエリパラメータの説明
+|leagueid |URI パラメータ名
+|team |型名
+|leagues leagueId teams |エンドポイントパス
+|​`/leagues/{leagueId}/teams`​ |エンドポイントパス
+|city |型のプロパティ名
+|===
+
+検索の前に特殊文字はさくじょされるので、最後の 2 つの検索は同じです。
 
 == 関連情報
 

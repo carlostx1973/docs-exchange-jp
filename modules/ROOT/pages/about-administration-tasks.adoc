@@ -7,9 +7,9 @@ Anypoint Exchange には、Exchange コントリビュータまたは Exchange �
 
 Exchange 管理者は次のタスクを実行できます。
 
-* xref:to-set-permissions.adoc[Exchange ロール権限を設定する] - 組織内の誰が Exchange 管理者、Exchange コントリビュータ、または Exchange 閲覧者になるかを決定します。個々のアセットにロールアクセス権を提供することもできます。
-* xref:to-save-searches.adoc[検索を保存する] - ビジネスグループ内のアセットの検索を保存および管理します。
-* xref:to-share-an-asset-with-a-user.adoc[アセットを共有する] - 組織内の他のユーザがこのアセットにアクセスできるようにします。共有を使用して、API アセットを公開ポータルにパブリッシュすることもできます。
-* xref:to-enable-the-request-access-button.adoc[API Manager を使用して [Request Access (アクセス権の要求)] ボタンを追加する] - これにより、ユーザと共有可能な API アセットを指定できます。
-* xref:to-deprecate-asset.adoc[アセットを非推奨にする] - アセット内の特定バージョンへのアクセスを停止し、アセットは使用可能なままにします。ユーザはアセット内の他のバージョンにアクセスできます。
-* xref:migrate.adoc[Exchange 1 のアセットを Exchange 2 に移行する] - Exchange 1 から移行したアセットを処理する方法。
+* ​xref:to-set-permissions.adoc[Exchange ロール権限を設定する]​ - 組織内の誰が Exchange 管理者、Exchange コントリビュータ、または Exchange 閲覧者になるかを決定します。個々のアセットにロールアクセス権を提供することもできます。
+* ​xref:to-save-searches.adoc[検索を保存する]​ - ビジネスグループ内のアセットの検索を保存および管理します。
+* ​xref:to-share-an-asset-with-a-user.adoc[アセットを共有する]​ - 組織内の他のユーザがこのアセットにアクセスできるようにします。共有を使用して、API アセットを公開ポータルにパブリッシュすることもできます。
+* ​xref:to-enable-the-request-access-button.adoc[API Manager を使用して [Request Access (アクセス権の要求)] ボタンを追加する]​ - これにより、ユーザと共有可能な API アセットを指定できます。
+* ​xref:to-deprecate-asset.adoc[アセットを非推奨にする]​ - アセット内の特定バージョンへのアクセスを停止し、アセットは使用可能なままにします。ユーザはアセット内の他のバージョンにアクセスできます。
+* ​xref:migrate.adoc[Exchange 1 のアセットを Exchange 2 に移行する]​ - Exchange 1 から移行したアセットを処理する方法。

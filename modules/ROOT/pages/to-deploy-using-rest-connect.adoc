@@ -16,7 +16,7 @@ Exchange で、[Download (ダウンロード)] メニューから Mule 3 また�
 
 image::ex-downloads.png[]
 
-注意: Exchange に REST アセットをデプロイしたら、画面を更新してすべてのダウンロードオプションが使用可能であることを確認してください。
+NOTE: Exchange に REST アセットをデプロイしたら、画面を更新してすべてのダウンロードオプションが使用可能であることを確認してください。
 
 Mule 3 コネクタは zip ファイルとしてダウンロードされ、Mule 4 コネクタは JAR ファイルとしてダウンロードされます。 
 
@@ -305,7 +305,7 @@ securitySchemes:
 +
 image::rest-connect-publish-to-exchange.png[]
 +
-. Design Center で HTTP リスナ、Github API、およびロガーのシンプルな Mule アプリケーションを作成します。このアプリケーションは `+https://my-app.cloudhub.io/getIssues+` をリスンし、検索語句に基づいて結果を返します。
+. Design Center で HTTP リスナ、Github API、およびロガーのシンプルな Mule アプリケーションを作成します。このアプリケーションは ​`+https://my-app.cloudhub.io/getIssues+`​ をリスンし、検索語句に基づいて結果を返します。
 +
 image::rest-connect-dc-flow.png[]
 +
@@ -315,7 +315,7 @@ image::rest-connect-api-config.png[]
 +
 . GitHub アカウントのクライアント IDとクライアントシークレットを取得します。クライアント ID とクライアントシークレットは、GitHub の [Settings (設定)] > [Developer settings (開発者設定)] にあります。GitHub に OAuth アプリケーションがない場合は、[New OAuth App (新規 OAuth アプリケーション] で作成できます。
 . GitHub API のベース URL は api.github.com であるため、ベースパスに「/」を使用できます。
-. 外部コールバック URL を照合して変更します。コールバック URL は GitHub からアクセストークンを受け取ります。デフォルトでは、コネクタには `+http://my-app.cloudhub.io/callback+` が表示されますが、アプリケーションに合わせて変更する必要があります。デモアプリケーションのコールバック URL は `+http://githubapp-smky.cloudhub.io/callback+` であるため、「my-app」を「githubapp-smky」で置き換える必要があります。この情報は、Design Center でメニューに移動して [Copy Link (リンクをコピー)] を選択して取得できます。
+. 外部コールバック URL を照合して変更します。コールバック URL は GitHub からアクセストークンを受け取ります。デフォルトでは、コネクタには ​`+http://my-app.cloudhub.io/callback+`​ が表示されますが、アプリケーションに合わせて変更する必要があります。デモアプリケーションのコールバック URL は ​`+http://githubapp-smky.cloudhub.io/callback+`​ であるため、「my-app」を「githubapp-smky」で置き換える必要があります。この情報は、Design Center でメニューに移動して [Copy Link (リンクをコピー)] を選択して取得できます。
 +
 image::rest-connect-ready-to-deploy.png[]
 +
@@ -323,5 +323,5 @@ image::rest-connect-ready-to-deploy.png[]
 +
 image::rest-connect-auth-callback-url.png[]
 +
-. GitHub からアクセストークンを取得する準備が整いました。ブラウザで、この例の `+http://githubapp-smky.cloudhub.io/authorize+` (または `+http://my-app.cloudhub.io/authorize+` の my-app.cloudhub.io を [Copy Link (リンクをコピー)] で取得した値に置き換えた URL) に移動します。この URL にアクセスすると、GitHub にログインするように求められます。
-. アクセストークンが正常に発行されたら、`+http://my-app.cloudhub.io/getIssues+` (my-app.cloudhub.io を [`Copy link` (リンクをコピー)] で取得した値に置き換える) を使用して、GitHub から Salesforce 関連の問題を取得できます。
+. GitHub からアクセストークンを取得する準備が整いました。ブラウザで、この例の ​`+http://githubapp-smky.cloudhub.io/authorize+`​ (または ​`+http://my-app.cloudhub.io/authorize+`​ の my-app.cloudhub.io を [Copy Link (リンクをコピー)] で取得した値に置き換えた URL) に移動します。この URL にアクセスすると、GitHub にログインするように求められます。
+. アクセストークンが正常に発行されたら、​`+http://my-app.cloudhub.io/getIssues+`​ (my-app.cloudhub.io を [​`Copy link`​ (リンクをコピー)] で取得した値に置き換える) を使用して、GitHub から Salesforce 関連の問題を取得できます。

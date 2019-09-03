@@ -30,7 +30,7 @@ API.authenticate(myclient);
 
 == 外部 API の API Notebook プログラムフロー
 
-Instagram API などの外部 API にアクセスする場合、`+https://anypoint.mulesoft.com/exchange/api/v1/health+` URL の Anypoint アセットポータルサービスを
+Instagram API などの外部 API にアクセスする場合、​`+https://anypoint.mulesoft.com/exchange/api/v1/health+`​ URL の Anypoint アセットポータルサービスを
 使用して、クライアントを取得します。
 
 取得コードは次のようになります。
@@ -56,18 +56,18 @@ API.authenticate(instagramApi);
 
 . API.createClient 関数を使用して、ノート内で API へのアクセスを初期化するクライアントを作成します。
 +
-構文: `API.createClient('CLIENT_NAME', 'URL_TO_API_MANAGER_API');`
+構文: ​`API.createClient('CLIENT_NAME', 'URL_TO_API_MANAGER_API');`​
 +
 . API.authenticate 関数を使用して、Anypoint Platform でクライアントを認証します。
 +
-構文: `API.authenticate(CLIENT_NAME);`
+構文: ​`API.authenticate(CLIENT_NAME);`​
 +
 . REST API の機能に基づいてノートを作成します。各関数は、RAML 記述子ブロックの名前に
-基づきます。たとえば、`/info` というブロックがある `getdetails` クライアントの場合、GET コールをドキュメント化するには、ノートでの関数の説明を `getdetails.info.get();` とします。
+基づきます。たとえば、​`/info`​ というブロックがある ​`getdetails`​ クライアントの場合、GET コールをドキュメント化するには、ノートでの関数の説明を ​`getdetails.info.get();`​ とします。
 +
 次のように、配列を使用して関数コールにパラメータを追加できます。
 +
-`me.function.post[{ orgId: 'myorg'}) ...]`
+​`me.function.post[{ orgId: 'myorg'}) ...]`​
 +
 . コードブロックに要素を設定して [Play (再生)] をクリックし、Exchange で API をテストします。コードでエラーが
 発生することなく、すべてのコードブロックが機能することを確認します。
@@ -93,5 +93,5 @@ API.authenticate(github);
 
 == 関連情報
 
-* API Notebook の関数の説明については、xref:1.x@api-manager::creating-an-api-notebook.adoc[「API Notebook リファレンス」]を参照。
+* API Notebook の関数の説明については、​xref:1.x@api-manager::creating-an-api-notebook.adoc[「API Notebook リファレンス」]​を参照。
 * https://docs.mulesoft.com/design-center/v/1.0/upload-raml-task[既存の RAML ファイルを Exchange にアップロード]。

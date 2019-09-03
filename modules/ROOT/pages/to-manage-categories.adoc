@@ -7,19 +7,19 @@ endif::[]
 Exchange 管理者と組織の所有者は、Exchange アセットタイプをグループ化するカテゴリを作成できます。
 カテゴリを使用すると、ユーザはアセットを異なるグループに分類し、アセットの参照と検出を向上させることができます。
 
-たとえば、使用可能な値 `System API`、`Experience API`、および `Integration API` を含む [API Type (API タイプ)] というカテゴリは、
+たとえば、使用可能な値 ​`System API`​、​`Experience API`​、および ​`Integration API`​ を含む [API Type (API タイプ)] というカテゴリは、
 REST API、SOAP API、および HTTP API タイプのアセットに適用されます。
 
 image::ex-categories-api-type.png[]
 
-*注意:* 組織のアセットで [Add Category (カテゴリを追加)] プロンプトを表示するには、
+​*注意:*​ 組織のアセットで [Add Category (カテゴリを追加)] プロンプトを表示するには、
 [Settings (設定)] ページで 1 つ以上のカテゴリを定義する必要があります。
 
 == カテゴリを作成する
 
 . Anypoint Exchange で、[Login (ログイン)] をクリックして組織にログインします。
 . 左側のナビゲーション領域で、[Settings (設定)] をクリックします。
-. [Add New Category (新規カテゴリを追加] をクリックします。
+. [Add New Category (新規カテゴリを追加)] をクリックします。
 . カテゴリ名を指定します。各カテゴリ名は一意である必要があります。
 . 1 つ以上の値を指定します。各カテゴリには値が必要です。
 . Return/Enter キーを押すか値の横にあるプラス記号をクリックし、値を確認します。
@@ -39,15 +39,15 @@ image::ex-category-value.png[]
 
 == カテゴリを使用して検索する
 
-Exchange の検索項目で、`category:` 検索語とカテゴリ値を指定してアセットをリストします。
+Exchange の検索項目で、​`category:`​ 検索語とカテゴリ値を指定してアセットをリストします。
 
-たとえば、[API Type (API タイプ)] のアセットを見つけるには、`category:"API Type" = "System API"` を検索します。
+たとえば、[API Type (API タイプ)] のアセットを見つけるには、​`category:"API Type" = "System API"`​ を検索します。
 
 異なるカテゴリの組み合わせを検索できますが、同じカテゴリの複数の値は検索できません。複数の検索語には暗黙的な AND を使用します。OR はサポートされていません。
 
 次の検索語は、System API と Salesforce 製品の両方としてマークされたすべてのアセットを返します。
 
-`category:"API Type" = "System API" category:"Product" = "Salesforce"`
+​`category:"API Type" = "System API" category:"Product" = "Salesforce"`​
 
 == カテゴリの変更または削除
 

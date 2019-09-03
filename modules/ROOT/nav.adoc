@@ -1,39 +1,41 @@
-.xref:index.adoc[Anypoint Exchange]
+.​xref:index.adoc[Anypoint Exchange]​
 * xref:index.adoc[Exchange について]
 * xref:to-find-info.adoc[アセット情報の検索]
 * xref:about-sharing-assets.adoc[アセットの共有]
- ** xref:workflow-sharing-assets.adoc[ワークフロー: アセットの共有]
- ** xref:to-create-an-asset.adoc[アセットの作成]
- ** xref:to-describe-an-asset.adoc[アセットの説明]
- ** xref:ex2-to-simulate-api-data.adoc[REST API のデータのシミュレーション]
- ** xref:to-download-an-asset.adoc[アセットのダウンロード]
- ** xref:to-share-api-asset-to-portal.adoc[公開ポータルへの API アセットの共有]
- ** xref:to-manage-categories.adoc[カテゴリの管理]
- ** xref:to-delete-asset.adoc[アセットの削除]
- ** xref:to-publish-an-asset.adoc[アセットのドラフトコンテンツのパブリッシュ]
- ** xref:to-change-raml-version.adoc[API アセットのバージョンの変更]
- ** xref:to-share-an-http-api.adoc[HTTPS API の共有]
- ** xref:exchange2-faq.adoc[FAQ]
+ ** ​xref:workflow-sharing-assets.adoc[ワークフロー: アセットの共有]​
+ ** ​xref:to-create-an-asset.adoc[アセットの作成]​
+ ** ​xref:to-describe-an-asset.adoc[アセットの説明]​
+ ** ​xref:to-manage-asset-portal-resources.adoc[アセットポータルのリソースの管理]​
+ ** ​xref:ex2-to-simulate-api-data.adoc[REST API のデータのシミュレーション]​
+ ** ​xref:to-download-an-asset.adoc[アセットのダウンロード]​
+ ** ​xref:to-share-api-asset-to-portal.adoc[公開ポータルへの API アセットの共有]​
+ ** ​xref:to-manage-categories.adoc[カテゴリの管理]​
+ ** ​xref:to-delete-asset.adoc[アセットの削除]​
+ ** ​xref:to-publish-an-asset.adoc[アセットのドラフトコンテンツのパブリッシュ]​
+ ** ​xref:to-change-raml-version.adoc[API アセットのバージョンの変更]​
+ ** ​xref:to-share-an-http-api.adoc[HTTPS API の共有]​
+ ** ​xref:exchange2-faq.adoc[FAQ]​
 * xref:about-api-use.adoc[API のコンシューム]
- ** xref:about-my-applications.adoc[My Applications (マイアプリケーション)]
- ** xref:to-request-access.adoc[アクセス権の要求]
- ** xref:to-deploy-using-rest-connect.adoc[REST Connect コネクタジェネレータ]
+ ** ​xref:about-my-applications.adoc[My Applications (マイアプリケーション)]​
+ ** ​xref:to-request-access.adoc[アクセス権の要求]​
+ ** ​xref:to-deploy-using-rest-connect.adoc[REST Connect コネクタジェネレータ]​
 * xref:about-platform-apis.adoc[Exchange プラットフォーム API]
- ** xref:to-publish-assets-maven.adoc[Maven を使用したアセットのパブリッシュ]
- ** xref:to-search-with-graph-api.adoc[Graph API を使用した検索]
+ ** ​xref:to-publish-assets-maven.adoc[Maven を使用したアセットのパブリッシュ]​
+ ** ​xref:to-search-with-graph-api.adoc[Graph API を使用した検索]​
 * xref:about-documenting-an-api.adoc[API のドキュメント化]
- ** xref:to-use-api-notebook.adoc[API Notebook を使用したアセットのドキュメント化]
- ** xref:to-configure-api-settings.adoc[API インスタンスの設定]
+ ** ​xref:to-use-api-notebook.adoc[API Notebook を使用したアセットのドキュメント化]​
+ ** ​xref:to-configure-api-settings.adoc[API インスタンスの設定]​
 * xref:about-portals.adoc[Exchange 公開ポータル]
- ** xref:to-customize-portal.adoc[Exchange 公開ポータルのカスタマイズ]
- ** xref:portal-vanity-domain.adoc[公開ポータルのバニティドメイン]
+ ** ​xref:to-customize-portal.adoc[Exchange 公開ポータルのカスタマイズ]​
+ ** ​xref:portal-vanity-domain.adoc[公開ポータルのバニティドメイン]​
+ ** ​xref:to-manage-public-portal-resources.adoc[公開ポータルのリソースの管理]​
 * xref:about-exchange1.adoc[Exchange 1 (旧バージョン) について]
- ** xref:exchange1.adoc[Exchange 1 (旧バージョン) の使用]
- ** xref:exchange1-faq.adoc[FAQ: Exchange 1 (旧バージョン)]
+ ** ​xref:exchange1.adoc[Exchange 1 (旧バージョン) の使用]​
+ ** ​xref:exchange1-faq.adoc[FAQ: Exchange 1 (旧バージョン)]​
 * xref:about-administration-tasks.adoc[管理者タスク]
- ** xref:to-share-an-asset-with-a-user.adoc[アセットの共有]
- ** xref:to-save-searches.adoc[検索の保存]
- ** xref:to-enable-the-request-access-button.adoc[[Request Access (アクセス権の要求) ボタンの表示の有効化]
- ** xref:to-deprecate-asset.adoc[アセットの非推奨化]
- ** xref:to-set-permissions.adoc[ユーザアクセス権限の設定]
- ** xref:migrate.adoc[Exchange 1 からのアセットの移行]
+ ** ​xref:to-share-an-asset-with-a-user.adoc[アセットの共有]​
+ ** ​xref:to-save-searches.adoc[検索の保存]​
+ ** ​xref:to-enable-the-request-access-button.adoc[[Request Access (アクセス権の要求) ボタンの表示の有効化]​
+ ** ​xref:to-deprecate-asset.adoc[アセットの非推奨化]​
+ ** ​xref:to-set-permissions.adoc[ユーザアクセス権限の設定]​
+ ** ​xref:migrate.adoc[Exchange 1 からのアセットの移行]​

@@ -37,7 +37,9 @@ Enter (Return) キーを押す代わりに、タイトルを編集して編集�
 
 マークダウンで、次の構文を使用して Web で提供される画像を参照します。
 
-`+![some alt text](http://www.example.com/image/png.png)+`
+​`+![some alt text](http://www.example.com/image/png.png)+`​
+
+2019 年 5 月より前にアップロードされた画像は認証せずにアクセスできます。2019 年 5 月以降にアップロードされた画像には認証が必要です。2019 年 5 月より前にアップロードされた画像への未認証のアクセスを無効化するには、その画像をダウンロードし、削除した後に再度アップロードしてください。
 
 == セカンダリページを追加する
 
@@ -48,6 +50,14 @@ Enter (Return) キーを押す代わりに、タイトルを編集して編集�
 . ページの作成が終了したら、[Publish (パブリッシュ)] をクリックします。
 
 [Edit (編集)] モードでは、ページ名をクリックして左側のナビゲーションバーでページを上下にドラッグすることで、ページを並び替えることができます。
+
+ページ名はすべて検証されます。
+
+* ページ名の長さは 1 ～ 128 文字までにする必要があります。
+* ページ名に予約済みの名前 ​`home`​ は使用できません。
+* ページ名に既存のページ名は使用できません。
+* ページ名に次の文字は使用できません: ​`@`​ ​`*`​ ​`+`​ ​`/`​ ​`_`​ ​`\`​。
+* ページ名を​`.`​で始めることはできません。
 
 == アセットタグを作成する
 
@@ -80,7 +90,7 @@ Exchange では、アセットのバージョンとは別に API のバージョ
 
 アセットのバージョンを変更するには、[Add New Version (新規バージョンを追加)] image:ex2-add-new-version.png[アセットバージョンボタン] をクリックします。
 
-xref:to-change-raml-version.adoc[「RAML バージョンの変更」]も参照してください。
+​xref:to-change-raml-version.adoc[「RAML バージョンの変更」]​も参照してください。
 
 == エディタに関する注意
 
@@ -95,7 +105,7 @@ xref:to-change-raml-version.adoc[「RAML バージョンの変更」]も参照�
 
 * Anypoint Exchange は GitHub マークダウンを使用する。GitHub マークダウンでは、Exchange でサポートされていない構文の強調表示以外のすべてが機能します。
 * マークダウンでは、div、button、a、ul、ol、table、p、span、pre、code などの基本的な HTML 5 コード要素がサポートされる。
-* リンクの挿入: `+[MuleSoft.com](http://www.mulesoft.com)+` または:
+* リンクの挿入: ​`+[MuleSoft.com](http://www.mulesoft.com)+`​ または:
 +
 [source,text,linenums]
 ----
@@ -104,13 +114,13 @@ xref:to-change-raml-version.adoc[「RAML バージョンの変更」]も参照�
 [1]: https://mulesoft.com
 ----
 +
-* YouTube 動画の挿入: `+![linkname](https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE)+` +
-例: `+![](https://www.youtube.com/embed/K3tuHUZ1J04)+`
+* YouTube 動画の挿入: ​`+![linkname](https://www.youtube.com/embed/YOUR_YOUTUBE_ID_HERE)+`​ +
+例: ​`+![](https://www.youtube.com/embed/K3tuHUZ1J04)+`​
 +
-* Vimeo 動画の挿入: `[linkname](VIMEO_URL)`
+* Vimeo 動画の挿入: ​`[linkname](VIMEO_URL)`​
 * youtu.be URL へのアセット ID の追加: +
-変更前: `+https://youtu.be/EhJM1GawQec+` +
-変更後: `+![](https://www.youtube.com/embed/EhJM1GawQec)+`
+変更前: ​`+https://youtu.be/EhJM1GawQec+`​ +
+変更後: ​`+![](https://www.youtube.com/embed/EhJM1GawQec)+`​
 
 == 関連情報
 

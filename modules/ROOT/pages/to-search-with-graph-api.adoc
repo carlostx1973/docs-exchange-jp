@@ -10,7 +10,7 @@ Exchange Graph API では、Exchange アセットの文字列値を検索でき�
 Graph API は Anypoint Exchange と Anypoint Platform にアクセスするため、
 非公開 Exchange でアセットにアクセスする場合、照会にアクセストークンが必要です。MuleSoft 公開アセットのみを検索する場合、アクセストークンは必要ありません。
 
-*注意:*
+​*注意:*​
 
 * Exchange Graph API は Anypoint Platform アカウントなしで使用可能。その場合、MuleSoft によって一般公開されたアセットのみが返されます。
 * この API を利用して非公開コンテンツにアクセスするには、Anypoint Platform アカウントでプロビジョニングされている必要がある。
@@ -35,11 +35,11 @@ curl -X POST \
 }'
 ----
 
-https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/access-management-api/api/v1/pages/Authentication/[Access Management API の 「Authentication (認証)」]も参照してください。
+https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/f1e97bc6-315a-4490-82a7-23abe036327a.anypoint-platform/access-management-api/api/v1/pages/Authentication/[Access Management API の「Authentication (認証)」]も参照してください。
 
 == Graph API のアクセス URL
 
-Graph API には `+https://anypoint.mulesoft.com/graph/api/v1/graphql+` URLでアクセスできます。API を使用して
+Graph API には ​`+https://anypoint.mulesoft.com/graph/api/v1/graphql+`​ URLでアクセスできます。API を使用して
 検索するには、検索文字列を含む POST コマンドを送信します。
 
 例:
@@ -128,13 +128,13 @@ URL の例を次に示します。
 https://anypoint.mulesoft.com/exchange/42424242/product-api/1.0.0/
 ----
 +
-`42424242` が組織 ID です。
+​`42424242`​ が組織 ID です。
 +
 . organizationIds 項目を使用して、組織 ID を追加します。
 +
 単一の組織 ID は次のようになります。
 +
-`organizationIds: ["42424242"]`
+​`organizationIds: ["42424242"]`​
 +
 [source,json,linenums]
 ----
@@ -183,15 +183,15 @@ https://anypoint.mulesoft.com/exchange/42424242/product-api/1.0.0/
 |パラメータ |説明
 |assetId |各アセットのアセット ID。
 |createdAt |アセットの作成日時 (例: 2018-08-11T04:48:20.585Z)。
-|createdBy { id, userName, firstName, lastName } |アセットの作成者を表示します。
-|dependencies { groupId, assetId, version, name, type } |リストされたアセットが依存するアセットを返します。
-|files { classifier, packaging, externalLink, md5 } |ファイル情報。
+|createdBy ​{ id, userName, firstName, lastName }​ |アセットの作成者を表示します。
+|dependencies ​{ groupId, assetId, version, name, type }​ |リストされたアセットが依存するアセットを返します。
+|files ​{ classifier, packaging, externalLink, md5 }​ |ファイル情報。
 |name |アセット名。
 |numberOfRates |アセットの星による評価の数。
 |organizationId |アセットの組織 ID。
 |rating |アセットの星による評価の値。
 |runtimeVersion |Mule Runtime バージョン。
-|tags { value, key, mutable } |アセットタグ。ユーザインターフェースでパブリッシュ時に作成されたタグは、`value` タグのみになります (キーはありません)。ユーザインターフェースで作成されたタグは変更可能で、その他のタグは変更できません。キーと値のあるタグは、アセットを説明するために Exchange によって作成された特別なタグです。
+|tags ​{ value, key, mutable }​ |アセットタグ。ユーザインターフェースでパブリッシュ時に作成されたタグは、​`value`​ タグのみになります (キーはありません)。ユーザインターフェースで作成されたタグは変更可能で、その他のタグは変更できません。キーと値のあるタグは、アセットを説明するために Exchange によって作成された特別なタグです。
 |type |Exchange の [All Types (すべてのタイプ)] メニューに対応する小文字の connector、template、example、rest-api、soap-api、raml-fragment、custom の値。
 |version |アセットのバージョン
 |groupId |アセットのグループ ID。
